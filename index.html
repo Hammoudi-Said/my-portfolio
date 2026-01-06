@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Said HAMMOUDI - Cloud & Platform Engineer | Expert GCP, AWS, Azure, Terraform | 3+ years experience">
-    <meta name="keywords" content="Cloud Engineer, Platform Engineer, GCP, AWS, Azure, Terraform, FastAPI, DevOps, Golang, Python">
+    <meta name="description" content="Said HAMMOUDI - Cloud & Platform Engineer Consultant | Expert multi-cloud (GCP, AWS, Azure), Terraform, Infrastructure as Code | Disponible Avril 2026 | Paris, Hybrid">
+    <meta name="keywords" content="Cloud Consultant, Platform Engineer, Cloud Architect, GCP, AWS, Azure, Terraform Provider, Infrastructure as Code, Landing Zone, FastAPI, Freelance Cloud Engineer, Paris">
     <meta name="author" content="Said HAMMOUDI">
-    <title>Said HAMMOUDI | Cloud & Platform Engineer</title>
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Said HAMMOUDI | Cloud & Platform Engineer Consultant">
+    <meta property="og:description" content="Consultant indépendant spécialisé en Platform Engineering et fondations cloud multi-cloud. Disponible Avril 2026.">
+    <meta property="og:image" content="https://ui-avatars.com/api/?name=Said+Hammoudi&size=400&background=635BFF&color=fff&bold=true">
+    
+    <title>Said HAMMOUDI | Cloud & Platform Engineer Consultant</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,6 +27,7 @@
                     colors: {
                         primary: '#635BFF',
                         'primary-dark': '#4F46E5',
+                        'primary-light': '#818CF8',
                         secondary: '#00D4FF',
                         accent: '#7C3AED',
                         gcp: '#4285F4',
@@ -30,20 +38,6 @@
                     fontFamily: {
                         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
                     },
-                    animation: {
-                        'fade-in': 'fadeIn 0.6s ease-out',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        }
-                    }
                 }
             }
         }
@@ -60,7 +54,20 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         
-        /* Custom animations */
+        .gradient-text {
+            background: linear-gradient(135deg, #635BFF 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .dark .gradient-text {
+            background: linear-gradient(135deg, #818CF8 0%, #A78BFA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -72,23 +79,6 @@
             transform: translateY(0);
         }
         
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #635BFF 0%, #7C3AED 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Dark mode gradient text */
-        .dark .gradient-text {
-            background: linear-gradient(135deg, #818CF8 0%, #A78BFA 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -110,30 +100,32 @@
             background: #4F46E5;
         }
         
-        /* Hero parallax container */
-        .hero-content {
-            transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+        .card-premium {
+            transition: all 0.3s ease;
+        }
+        
+        .card-premium:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(99, 91, 255, 0.15);
         }
     </style>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800 z-50 transition-all duration-300">
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="#" class="text-xl font-bold gradient-text hover:opacity-80 transition-opacity" data-i18n="nav.name">Said HAMMOUDI</a>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" data-i18n="nav.about">À propos</a>
-                    <a href="#skills" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" data-i18n="nav.skills">Compétences</a>
-                    <a href="#experience" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" data-i18n="nav.experience">Expérience</a>
-                    <a href="#education" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" data-i18n="nav.education">Formation</a>
-                    <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" data-i18n="nav.projects">Projets</a>
-                    <a href="#certifications" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" data-i18n="nav.certifications">Certifications</a>
-                    <a href="#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" data-i18n="nav.blog">Articles</a>
-                    <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" data-i18n="nav.contact">Contact</a>
+                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors text-sm font-medium" data-i18n="nav.about">Profil</a>
+                    <a href="#expertise" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors text-sm font-medium" data-i18n="nav.expertise">Expertise</a>
+                    <a href="#cases" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors text-sm font-medium" data-i18n="nav.cases">Cas d'usage</a>
+                    <a href="#experience" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors text-sm font-medium" data-i18n="nav.experience">Parcours</a>
+                    <a href="#approach" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors text-sm font-medium" data-i18n="nav.approach">Approche</a>
+                    <a href="#contact" class="px-4 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-all text-sm" data-i18n="nav.contact">Disponibilité</a>
                     
                     <!-- Theme Toggle -->
                     <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle theme">
@@ -164,26 +156,14 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
             <div class="px-4 py-4 space-y-3">
-                <a href="#about" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.about">À propos</a>
-                <a href="#skills" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.skills">Compétences</a>
-                <a href="#experience" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.experience">Expérience</a>
-                <a href="#education" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.education">Formation</a>
-                <a href="#projects" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.projects">Projets</a>
-                <a href="#certifications" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.certifications">Certifications</a>
-                <a href="#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.blog">Articles</a>
-                <a href="#contact" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.contact">Contact</a>
+                <a href="#about" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.about">Profil</a>
+                <a href="#expertise" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.expertise">Expertise</a>
+                <a href="#cases" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.cases">Cas d'usage</a>
+                <a href="#experience" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.experience">Parcours</a>
+                <a href="#approach" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.approach">Approche</a>
+                <a href="#contact" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.contact">Disponibilité</a>
                 
                 <div class="pt-3 border-t border-gray-200 dark:border-gray-700 space-y-3">
-                    <button id="theme-toggle-mobile" class="w-full flex items-center justify-center space-x-2 px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800">
-                        <svg class="w-5 h-5 sun-icon hidden" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
-                        </svg>
-                        <svg class="w-5 h-5 moon-icon" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                        </svg>
-                        <span class="text-sm font-medium" data-i18n="footer.theme.light">Mode</span>
-                    </button>
-                    
                     <div class="flex space-x-2">
                         <button onclick="switchLanguage('fr')" id="lang-fr-mobile" class="flex-1 px-3 py-2 rounded-lg text-sm font-medium bg-primary text-white">🇫🇷 FR</button>
                         <button onclick="switchLanguage('en')" id="lang-en-mobile" class="flex-1 px-3 py-2 rounded-lg text-sm font-medium bg-gray-100 dark:bg-gray-700">🇬🇧 EN</button>
@@ -194,54 +174,76 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 dark:from-gray-900 dark:via-gray-900 dark:to-purple-900/10 min-h-screen flex items-center">
+    <section class="pt-32 pb-24 bg-gradient-to-br from-gray-50 via-white to-purple-50/20 dark:from-gray-900 dark:via-gray-900 dark:to-purple-900/10 min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="hero-content max-w-4xl">
-                <div class="inline-block px-4 py-2 bg-primary/10 dark:bg-primary/20 rounded-full mb-6">
-                    <span class="text-primary dark:text-primary-light text-sm font-semibold">☁️ Cloud & Platform Engineer</span>
-                </div>
-                
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                    <span class="gradient-text" data-i18n="hero.greeting">Bonjour, je suis</span>
-                    <span class="block text-gray-900 dark:text-white mt-2">Said HAMMOUDI</span>
-                </h1>
-                
-                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed max-w-3xl" data-i18n="hero.description">
-                    Ingénieur Cloud & Platform Engineering avec 3 ans d'expérience, spécialisé dans la conception et l'industrialisation de plateformes cloud fiables, sécurisées et orientées self-service sur GCP, AWS et Azure.
-                </p>
-                
-                <div class="flex flex-wrap gap-4 mb-16">
-                    <a href="#contact" class="group px-8 py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center space-x-2" data-i18n="hero.cta.contact">
-                        <span>Me contacter</span>
-                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                    </a>
-                    <a href="#projects" class="px-8 py-4 bg-white dark:bg-gray-800 text-primary dark:text-primary-light rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all border-2 border-primary dark:border-primary-light" data-i18n="hero.cta.projects">Voir mes projets</a>
-                    <button onclick="downloadCV()" class="px-8 py-4 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl font-semibold hover:bg-gray-200 dark:hover:bg-gray-700 transition-all flex items-center space-x-2">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Content -->
+                <div class="space-y-8">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 dark:bg-primary/20 rounded-full">
+                        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                        <span class="text-primary dark:text-primary-light text-sm font-semibold" data-i18n="hero.badge">Cloud & Platform Engineer Consultant</span>
+                    </div>
+                    
+                    <div>
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
+                            <span class="text-gray-600 dark:text-gray-400 text-3xl md:text-4xl font-normal block mb-2" data-i18n="hero.greeting">Architecte de</span>
+                            <span class="gradient-text" data-i18n="hero.title">Plateformes Cloud Fiables & Scalables</span>
+                        </h1>
+                        <div class="inline-block px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg text-sm font-semibold mb-6">
+                            <span data-i18n="hero.subtitle">Disponible Avril 2026</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-2xl" data-i18n="hero.description">
+                        Consultant indépendant spécialisé en Platform Engineering et fondations cloud multi-cloud. J'industrialise des infrastructures cloud fiables, automatisées et orientées self-service pour accélérer la livraison produit.
+                    </p>
+                    
+                    <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
-                        <span data-i18n="hero.cta.download_cv">Télécharger mon CV</span>
-                    </button>
+                        <span data-i18n="hero.location">Paris • Hybride</span>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="group px-8 py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center space-x-2">
+                            <span data-i18n="hero.cta.availability">Discuter d'un projet</span>
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                        <a href="#cases" class="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all border-2 border-gray-200 dark:border-gray-700" data-i18n="hero.cta.cases">Voir les cas d'usage</a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-gray-200 dark:border-gray-700">
+                        <div>
+                            <div class="text-4xl font-bold gradient-text">3+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="hero.stats.years">Années d'expertise</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold gradient-text">3</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="hero.stats.platforms">Plateformes cloud</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold gradient-text">200+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="hero.stats.teams">Équipes accompagnées</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold gradient-text">94%</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="hero.stats.automation">Gain temps</div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                    <div class="text-center md:text-left">
-                        <div class="text-4xl md:text-5xl font-bold gradient-text stat-number" data-target="3" data-suffix="+">3+</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400 mt-2" data-i18n="hero.stats.years">Années d'expérience</div>
-                    </div>
-                    <div class="text-center md:text-left">
-                        <div class="text-4xl md:text-5xl font-bold gradient-text stat-number" data-target="3">3</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400 mt-2" data-i18n="hero.stats.clouds">Cloud Providers</div>
-                    </div>
-                    <div class="text-center md:text-left">
-                        <div class="text-4xl md:text-5xl font-bold gradient-text stat-number" data-target="3">3</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400 mt-2" data-i18n="hero.stats.certs">Certifications</div>
-                    </div>
-                    <div class="text-center md:text-left">
-                        <div class="text-4xl md:text-5xl font-bold gradient-text stat-number" data-target="164">164</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400 mt-2" data-i18n="hero.stats.tickets">Tickets/mois</div>
+                <!-- Right: Profile Photo -->
+                <div class="flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-primary to-accent rounded-full opacity-20 blur-2xl"></div>
+                        <img src="https://ui-avatars.com/api/?name=Said+Hammoudi&size=400&background=635BFF&color=fff&bold=true&font-size=0.4" 
+                             alt="Said HAMMOUDI" 
+                             class="relative w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-white dark:border-gray-800 shadow-2xl object-cover">
                     </div>
                 </div>
             </div>
@@ -251,560 +253,501 @@
     <!-- About Section -->
     <section id="about" class="py-24 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text" data-i18n="about.title">À propos</h2>
-            <div class="max-w-4xl mx-auto">
-                <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 leading-relaxed" data-i18n="about.paragraph1">
-                    Passionné par le Cloud et le Platform Engineering, je me spécialise dans la conception d'infrastructures cloud modernes, automatisées et évolutives. Mon expertise couvre l'ensemble du cycle de vie des plateformes : de la conception architecturale à l'industrialisation, en passant par l'automatisation et l'observabilité.
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4" data-i18n="about.title">Consultant Platform Engineering</h2>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-8 mb-16">
+                <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed" data-i18n="about.paragraph1">
+                    En tant que consultant Cloud & Platform Engineer, je construis des fondations cloud qui permettent aux organisations d'accélérer leur time-to-market tout en garantissant fiabilité, sécurité et gouvernance.
                 </p>
-                <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-12 leading-relaxed" data-i18n="about.paragraph2">
-                    Expert en Infrastructure as Code (Terraform) et développement de Terraform providers, avec une solide maîtrise du développement d'API (FastAPI). Approche pragmatique, orientée qualité, standardisation et livraison rapide.
+                <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed" data-i18n="about.paragraph2">
+                    Mon approche combine expertise technique approfondie (Infrastructure as Code, custom Terraform providers, architectures cloud natives) et vision pragmatique de la livraison. Je ne construis pas de l'infrastructure pour l'infrastructure : je conçois des plateformes qui créent de la valeur métier mesurable.
                 </p>
-                
-                <div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-purple-900/20 p-8 md:p-10 rounded-2xl border border-gray-100 dark:border-gray-700">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-8 gradient-text" data-i18n="about.values.title">Valeurs & Mindset</h3>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="text-3xl">🚀</div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Automation-first</h4>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.values.automation">Automatiser pour gagner en fiabilité et rapidité</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="text-3xl">🎯</div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Self-service</h4>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.values.self_service">Autonomiser les équipes produit</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="text-3xl">⚡</div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Reliability</h4>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.values.reliability">Construire des systèmes robustes et résilients</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="text-3xl">✨</div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Quality & Standards</h4>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.values.quality">Code de qualité, documentation claire</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4 md:col-span-2">
-                            <div class="text-3xl">🤝</div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Collaboration</h4>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.values.collaboration">Travail d'équipe et partage de connaissances</p>
-                            </div>
-                        </div>
+            </div>
+            
+            <!-- Philosophy -->
+            <div class="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-gray-800 dark:to-purple-900/20 p-10 rounded-3xl border border-gray-200 dark:border-gray-700">
+                <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 gradient-text" data-i18n="about.philosophy.title">Ma philosophie Platform Engineering</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <div class="text-3xl mb-3">🎯</div>
+                        <h4 class="font-bold text-lg mb-2 text-gray-900 dark:text-white" data-i18n="about.philosophy.item1.title">Platform as a Product</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.philosophy.item1.desc">Traiter l'infrastructure comme un produit avec des utilisateurs internes, des métriques de satisfaction et une amélioration continue</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <div class="text-3xl mb-3">🚀</div>
+                        <h4 class="font-bold text-lg mb-2 text-gray-900 dark:text-white" data-i18n="about.philosophy.item2.title">Delivery-First Mindset</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.philosophy.item2.desc">Réduire les frictions, accélérer les déploiements, autonomiser les équipes produit sans compromis sur la qualité</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <div class="text-3xl mb-3">📈</div>
+                        <h4 class="font-bold text-lg mb-2 text-gray-900 dark:text-white" data-i18n="about.philosophy.item3.title">Build for Scale</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.philosophy.item3.desc">Concevoir dès le départ pour la scalabilité technique et organisationnelle (multi-régions, multi-comptes, centaines d'équipes)</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <div class="text-3xl mb-3">⚡</div>
+                        <h4 class="font-bold text-lg mb-2 text-gray-900 dark:text-white" data-i18n="about.philosophy.item4.title">Automation & Quality</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.philosophy.item4.desc">Automatiser systématiquement, tester rigoureusement, documenter clairement pour garantir maintenabilité et fiabilité</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-24 bg-gray-50 dark:bg-gray-800/50">
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-24 bg-gray-50 dark:bg-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text" data-i18n="skills.title">Compétences & Stack</h2>
-            <p class="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto">Technologies et outils que j'utilise pour construire des plateformes cloud modernes</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4" data-i18n="expertise.title">Domaines d'Expertise</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="expertise.subtitle">Services de conseil en Cloud & Platform Engineering</p>
+            </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Cloud Providers -->
-                <div class="card-animate bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-800">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Service 1 -->
+                <div class="card-premium bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 6v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white" data-i18n="skills.cloud.title">Cloud Providers</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-gray-700 dark:text-gray-300 text-sm">Google Cloud Platform</span>
-                            <div class="w-2 h-2 bg-gcp rounded-full"></div>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-gray-700 dark:text-gray-300 text-sm">Amazon Web Services</span>
-                            <div class="w-2 h-2 bg-aws rounded-full"></div>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-gray-700 dark:text-gray-300 text-sm">Microsoft Azure</span>
-                            <div class="w-2 h-2 bg-azure rounded-full"></div>
-                        </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white" data-i18n="expertise.service1.title">Platform Engineering & Cloud Foundations</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed" data-i18n="expertise.service1.desc">Conception et industrialisation de Landing Zones multi-cloud (GCP, AWS, Azure). Architecture des fondations organisationnelles : governance, security, networking, observability.</p>
+                    <div class="flex items-start space-x-2 text-primary dark:text-primary-light">
+                        <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-semibold" data-i18n="expertise.service1.value">Réduit de 6 mois à 6 semaines le time-to-platform pour nouvelles BU</span>
                     </div>
                 </div>
                 
-                <!-- Platform Engineering -->
-                <div class="card-animate bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-800">
-                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <!-- Service 2 -->
+                <div class="card-premium bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
+                    <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white" data-i18n="skills.platform.title">Platform Engineering</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-purple-100 dark:bg-purple-900/30 text-terraform rounded-lg text-xs font-medium">Terraform</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">Providers</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">IaC</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">Landing Zones</span>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white" data-i18n="expertise.service2.title">Infrastructure as Code & Custom Providers</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed" data-i18n="expertise.service2.desc">Développement de Terraform providers customs (Plugin Framework, Golang). Modules réutilisables, testing automatisé (Terraform test, pytest), CI/CD pipelines.</p>
+                    <div class="flex items-start space-x-2 text-primary dark:text-primary-light">
+                        <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-semibold" data-i18n="expertise.service2.value">Accélère le provisioning de ressources complexes de 3 jours à 30 minutes</span>
                     </div>
                 </div>
                 
-                <!-- DevOps & Tools -->
-                <div class="card-animate bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-800">
-                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <!-- Service 3 -->
+                <div class="card-premium bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"></path>
+                            <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"></path>
+                            <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white" data-i18n="expertise.service3.title">Cloud APIs & Backend Development</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed" data-i18n="expertise.service3.desc">Conception d'APIs cloud natives (FastAPI, Cloud Run). Migration et refactoring d'applications legacy vers architectures modernes, multi-région, hautement disponibles.</p>
+                    <div class="flex items-start space-x-2 text-primary dark:text-primary-light">
+                        <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-semibold" data-i18n="expertise.service3.value">Améliore reliability (99.9% SLA) et réduit les coûts opérationnels de 40%</span>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="card-premium bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
+                    <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white" data-i18n="skills.devops.title">DevOps & Tools</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">CI/CD</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">Docker</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">Kubernetes</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">Vault</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">Datadog</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">GitHub Actions</span>
-                    </div>
-                </div>
-                
-                <!-- Development -->
-                <div class="card-animate bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-800">
-                    <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white" data-i18n="expertise.service4.title">Automation, CI/CD & Testing</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed" data-i18n="expertise.service4.desc">Industrialisation des workflows (GitHub Actions, GitLab CI). Automated testing frameworks, quality gates, observability (Datadog), secrets management (Vault).</p>
+                    <div class="flex items-start space-x-2 text-primary dark:text-primary-light">
+                        <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                         </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white" data-i18n="skills.development.title">Development</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg text-xs font-medium">Python</span>
-                        <span class="px-3 py-1.5 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-lg text-xs font-medium">Golang</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">FastAPI</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">Bash</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">Linux</span>
+                        <span class="text-sm font-semibold" data-i18n="expertise.service4.value">Réduit les incidents production de 70% via testing et observabilité</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-24 bg-white dark:bg-gray-900">
+    <!-- Case Studies Section -->
+    <section id="cases" class="py-24 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text" data-i18n="experience.title">Expérience Professionnelle</h2>
-            <p class="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto">3+ années à construire et gérer des plateformes cloud multi-cloud</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4" data-i18n="cases.title">Cas d'Usage Sélectionnés</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="cases.subtitle">Projets à impact mesurable sur plateformes enterprise</p>
+            </div>
             
-            <div class="max-w-5xl mx-auto">
-                <div class="relative border-l-2 border-primary dark:border-primary-light pl-8 md:pl-12 space-y-12">
-                    <!-- ADEO -->
-                    <div class="card-animate relative">
-                        <div class="absolute -left-[13px] md:-left-[17px] mt-1.5 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900 shadow-lg"></div>
-                        <div class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-800/50 p-6 md:p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
-                            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                <div>
-                                    <h3 class="text-2xl md:text-3xl font-bold mb-2 text-gray-900 dark:text-white" data-i18n="experience.adeo.title">Ingénieur Cloud</h3>
-                                    <div class="text-primary dark:text-primary-light font-semibold text-lg mb-2">ADEO</div>
-                                </div>
-                                <div class="text-gray-600 dark:text-gray-400 text-sm md:text-right">
-                                    <div data-i18n="experience.adeo.date">Oct. 2025 - Présent</div>
-                                    <div data-i18n="experience.adeo.location">Ronchin, France</div>
-                                </div>
+            <div class="space-y-12">
+                <!-- Case Study 1 -->
+                <div class="card-premium bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-purple-900/20 p-8 md:p-10 rounded-3xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white" data-i18n="cases.case1.title">Industrialisation Landing Zone Multi-Cloud</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-bold text-primary dark:text-primary-light mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span data-i18n="cases.case1.context">Contexte</span>
+                            </h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case1.context_text">Organisation retail 150K+ collaborateurs, migration cloud en cours, besoin de standardiser et accélérer le provisioning de comptes cloud pour 200+ équipes projet.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary dark:text-primary-light mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span data-i18n="cases.case1.problem">Défi</span>
+                            </h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case1.problem_text">Provisioning manuel de Landing Zones prenant 2-3 semaines, erreurs de configuration fréquentes, absence de governance et de standardisation multi-cloud (GCP, Azure).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl mb-6 border border-gray-200 dark:border-gray-700">
+                        <h4 class="font-bold text-primary dark:text-primary-light mb-3 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span data-i18n="cases.case1.solution">Solution</span>
+                        </h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case1.solution_text">Développement d'un Terraform provider custom intégré au self-service portal. Automatisation complète : networking, security baselines, observability, quotas. Pipeline CI/CD avec validation automatique.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-green-600 dark:text-green-400 mb-3 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span data-i18n="cases.case1.impact">Impact</span>
+                        </h4>
+                        <div class="grid md:grid-cols-2 gap-3">
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case1.impact_item1">Time-to-platform réduit de 2-3 semaines à 4 heures</span>
                             </div>
-                            <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed" data-i18n="experience.adeo.description">
-                                Intégré au sein de la BU Infrastructure & Network, au sein de l'équipe Landing Zone Management. Travaille dans un environnement multi-cloud (GCP et Azure) dédié au provisioning et à la gouvernance des Landing Zones pour les équipes projet.
-                            </p>
-                            <ul class="space-y-3 mb-6">
-                                <li class="flex items-start text-gray-700 dark:text-gray-300">
-                                    <svg class="w-5 h-5 text-primary dark:text-primary-light mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span data-i18n="experience.adeo.highlight1">Gestion autonome des tickets RUN via Jira et ServiceNow (SNOW)</span>
-                                </li>
-                                <li class="flex items-start text-gray-700 dark:text-gray-300">
-                                    <svg class="w-5 h-5 text-primary dark:text-primary-light mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span data-i18n="experience.adeo.highlight2">Développement et évolution d'un Terraform provider (GCP)</span>
-                                </li>
-                                <li class="flex items-start text-gray-700 dark:text-gray-300">
-                                    <svg class="w-5 h-5 text-primary dark:text-primary-light mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span data-i18n="experience.adeo.highlight3">Conception et optimisation d'APIs de provisioning cloud</span>
-                                </li>
-                                <li class="flex items-start text-gray-700 dark:text-gray-300">
-                                    <svg class="w-5 h-5 text-primary dark:text-primary-light mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span data-i18n="experience.adeo.highlight4">Standardisation de la gestion d'erreurs API et amélioration de la robustesse</span>
-                                </li>
-                            </ul>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 bg-white dark:bg-gray-900 text-primary dark:text-primary-light rounded-lg text-xs font-medium border border-primary/20 dark:border-primary-light/20">GCP</span>
-                                <span class="px-3 py-1.5 bg-white dark:bg-gray-900 text-primary dark:text-primary-light rounded-lg text-xs font-medium border border-primary/20 dark:border-primary-light/20">Azure</span>
-                                <span class="px-3 py-1.5 bg-white dark:bg-gray-900 text-primary dark:text-primary-light rounded-lg text-xs font-medium border border-primary/20 dark:border-primary-light/20">Terraform</span>
-                                <span class="px-3 py-1.5 bg-white dark:bg-gray-900 text-primary dark:text-primary-light rounded-lg text-xs font-medium border border-primary/20 dark:border-primary-light/20">Python</span>
-                                <span class="px-3 py-1.5 bg-white dark:bg-gray-900 text-primary dark:text-primary-light rounded-lg text-xs font-medium border border-primary/20 dark:border-primary-light/20">FastAPI</span>
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case1.impact_item2">Taux d'erreur de provisioning réduit de 85%</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case1.impact_item3">200+ équipes onboardées en 6 mois vs 12 mois projeté</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case1.impact_item4">Governance et compliance garanties à 100%</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Decathlon -->
-                    <div class="card-animate relative">
-                        <div class="absolute -left-[13px] md:-left-[17px] mt-1.5 w-6 h-6 bg-primary/70 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"></div>
-                        <div class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-800/50 p-6 md:p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
-                            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                <div>
-                                    <h3 class="text-2xl md:text-3xl font-bold mb-2 text-gray-900 dark:text-white" data-i18n="experience.decathlon.title">Ingénieur Cloud</h3>
-                                    <div class="text-primary dark:text-primary-light font-semibold text-lg mb-2">Decathlon</div>
-                                </div>
-                                <div class="text-gray-600 dark:text-gray-400 text-sm md:text-right">
-                                    <div data-i18n="experience.decathlon.date">Oct. 2022 - Oct. 2025</div>
-                                    <div data-i18n="experience.decathlon.location">Lille, France</div>
-                                </div>
-                            </div>
-                            <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed" data-i18n="experience.decathlon.description">
-                                Au sein de la BU CPE (Pôle Infrastructure), intégré aux équipes Cloud Foundation (RUN & MCO des Landing Zones GCP/AWS) et Cloud Dev (développement d'un provider Terraform). Impliqué dans des projets stratégiques dans un environnement Agile et Full Cloud.
-                            </p>
-                            
-                            <!-- Key Metrics Highlight -->
-                            <div class="grid grid-cols-2 gap-4 mb-6 p-4 bg-primary/5 dark:bg-primary/10 rounded-xl">
-                                <div class="text-center">
-                                    <div class="text-2xl font-bold text-primary dark:text-primary-light">164</div>
-                                    <div class="text-xs text-gray-600 dark:text-gray-400">Tickets/mois</div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="text-2xl font-bold text-primary dark:text-primary-light">3j → 30min</div>
-                                    <div class="text-xs text-gray-600 dark:text-gray-400">Tests optimisés</div>
-                                </div>
-                            </div>
-                            
-                            <ul class="space-y-3 mb-6">
-                                <li class="flex items-start text-gray-700 dark:text-gray-300">
-                                    <svg class="w-5 h-5 text-primary dark:text-primary-light mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span data-i18n="experience.decathlon.highlight1">Gestion RUN et MCO de la Landing Zone multi-cloud (GCP, AWS) - 164 tickets/mois</span>
-                                </li>
-                                <li class="flex items-start text-gray-700 dark:text-gray-300">
-                                    <svg class="w-5 h-5 text-primary dark:text-primary-light mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span data-i18n="experience.decathlon.highlight2">Conception et développement d'un Terraform provider custom (Golang)</span>
-                                </li>
-                                <li class="flex items-start text-gray-700 dark:text-gray-300">
-                                    <svg class="w-5 h-5 text-primary dark:text-primary-light mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span data-i18n="experience.decathlon.highlight3">Développement d'APIs backend en Python (FastAPI)</span>
-                                </li>
-                                <li class="flex items-start text-gray-700 dark:text-gray-300">
-                                    <svg class="w-5 h-5 text-primary dark:text-primary-light mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span data-i18n="experience.decathlon.highlight4">Implémentation de tests automatisés end-to-end : 3 jours → 30 minutes</span>
-                                </li>
-                                <li class="flex items-start text-gray-700 dark:text-gray-300">
-                                    <svg class="w-5 h-5 text-primary dark:text-primary-light mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span data-i18n="experience.decathlon.highlight5">Pilotage de déploiements multi-régions de plateforme cloud</span>
-                                </li>
-                            </ul>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 bg-white dark:bg-gray-900 text-primary dark:text-primary-light rounded-lg text-xs font-medium border border-primary/20 dark:border-primary-light/20">GCP</span>
-                                <span class="px-3 py-1.5 bg-white dark:bg-gray-900 text-primary dark:text-primary-light rounded-lg text-xs font-medium border border-primary/20 dark:border-primary-light/20">AWS</span>
-                                <span class="px-3 py-1.5 bg-white dark:bg-gray-900 text-primary dark:text-primary-light rounded-lg text-xs font-medium border border-primary/20 dark:border-primary-light/20">Terraform</span>
-                                <span class="px-3 py-1.5 bg-white dark:bg-gray-900 text-primary dark:text-primary-light rounded-lg text-xs font-medium border border-primary/20 dark:border-primary-light/20">Golang</span>
-                                <span class="px-3 py-1.5 bg-white dark:bg-gray-900 text-primary dark:text-primary-light rounded-lg text-xs font-medium border border-primary/20 dark:border-primary-light/20">Python</span>
-                                <span class="px-3 py-1.5 bg-white dark:bg-gray-900 text-primary dark:text-primary-light rounded-lg text-xs font-medium border border-primary/20 dark:border-primary-light/20">FastAPI</span>
-                            </div>
-                        </div>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-primary rounded-lg text-xs font-medium">GCP</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-primary rounded-lg text-xs font-medium">Azure</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-primary rounded-lg text-xs font-medium">Terraform Provider</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-primary rounded-lg text-xs font-medium">CI/CD</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-primary rounded-lg text-xs font-medium">Automation</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-24 bg-gray-50 dark:bg-gray-800/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text" data-i18n="education.title">Formation</h2>
-            <p class="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto">Cursus en Génie Logiciel à l'Université de Lille</p>
-            
-            <div class="max-w-4xl mx-auto">
-                <div class="relative border-l-2 border-primary/30 dark:border-primary-light/30 pl-8 md:pl-12 space-y-8">
-                    <!-- Master 2 -->
-                    <div class="card-animate relative">
-                        <div class="absolute -left-[9px] md:-left-[13px] mt-1.5 w-4 h-4 bg-primary rounded-full border-2 border-white dark:border-gray-800 shadow"></div>
-                        <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
-                            <h3 class="text-xl font-bold mb-1 text-gray-900 dark:text-white" data-i18n="education.master2.degree">Master 2 Génie Logiciel</h3>
-                            <div class="text-primary dark:text-primary-light font-medium mb-2" data-i18n="education.master2.school">Université de Lille</div>
-                            <div class="text-sm text-gray-600 dark:text-gray-400" data-i18n="education.master2.date">Sept. 2021 - Juin 2022</div>
+                
+                <!-- Case Study 2 -->
+                <div class="card-premium bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-pink-900/20 p-8 md:p-10 rounded-3xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white" data-i18n="cases.case2.title">Custom Terraform Provider - Ressources Réseau</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-bold text-primary dark:text-primary-light mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span data-i18n="cases.case2.context">Contexte</span>
+                            </h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case2.context_text">Entreprise retail majeure avec architecture réseau complexe (VPC custom, private connectivity, certificats SSL automatisés). Ressources non supportées nativement par le provider Terraform officiel.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary dark:text-primary-light mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span data-i18n="cases.case2.problem">Défi</span>
+                            </h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case2.problem_text">Équipes bloquées par l'absence de ressources Terraform pour composants réseau critiques. Workarounds manuels, inconsistances, impossibilité de tester en CI/CD.</p>
                         </div>
                     </div>
                     
-                    <!-- Master 1 -->
-                    <div class="card-animate relative">
-                        <div class="absolute -left-[9px] md:-left-[13px] mt-1.5 w-4 h-4 bg-primary/70 rounded-full border-2 border-white dark:border-gray-800 shadow"></div>
-                        <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
-                            <h3 class="text-xl font-bold mb-1 text-gray-900 dark:text-white" data-i18n="education.master1.degree">Master 1 Génie Logiciel</h3>
-                            <div class="text-primary dark:text-primary-light font-medium mb-2" data-i18n="education.master1.school">Université de Lille</div>
-                            <div class="text-sm text-gray-600 dark:text-gray-400" data-i18n="education.master1.date">Sept. 2020 - Juin 2021</div>
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl mb-6 border border-gray-200 dark:border-gray-700">
+                        <h4 class="font-bold text-primary dark:text-primary-light mb-3 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span data-i18n="cases.case2.solution">Solution</span>
+                        </h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case2.solution_text">Développement d'un provider Terraform custom en Golang (Plugin Framework). Ressources : VPC custom, subnets, certificats, private endpoints. Tests end-to-end automatisés, documentation complète.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-green-600 dark:text-green-400 mb-3 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span data-i18n="cases.case2.impact">Impact</span>
+                        </h4>
+                        <div class="grid md:grid-cols-2 gap-3">
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case2.impact_item1">Provisioning réseau automatisé à 100%</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case2.impact_item2">Temps de provisioning réduit de 3 jours à 30 minutes</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case2.impact_item3">Adoption par 50+ équipes en 2 mois</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case2.impact_item4">Testing automatisé garantissant 0 régression</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Licence -->
-                    <div class="card-animate relative">
-                        <div class="absolute -left-[9px] md:-left-[13px] mt-1.5 w-4 h-4 bg-primary/50 rounded-full border-2 border-white dark:border-gray-800 shadow"></div>
-                        <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
-                            <h3 class="text-xl font-bold mb-1 text-gray-900 dark:text-white" data-i18n="education.license.degree">Licence Informatique</h3>
-                            <div class="text-primary dark:text-primary-light font-medium mb-2" data-i18n="education.license.school">Université de Lille</div>
-                            <div class="text-sm text-gray-600 dark:text-gray-400" data-i18n="education.license.date">Sept. 2016 - Juin 2020</div>
-                        </div>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-purple-600 rounded-lg text-xs font-medium">Golang</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-purple-600 rounded-lg text-xs font-medium">Terraform Plugin Framework</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-purple-600 rounded-lg text-xs font-medium">Networking</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-purple-600 rounded-lg text-xs font-medium">Testing</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text" data-i18n="projects.title">Projets & Réalisations</h2>
-            <p class="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto">Projets techniques et réalisations marquantes</p>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Project 1: Terraform Provider -->
-                <div class="card-animate group bg-gradient-to-br from-purple-50 to-white dark:from-gray-800 dark:to-gray-800/50 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                
+                <!-- Case Study 3 - Abbreviated for space -->
+                <div class="card-premium bg-gradient-to-br from-green-50 to-teal-50 dark:from-gray-800 dark:to-teal-900/20 p-8 md:p-10 rounded-3xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white" data-i18n="cases.case3.title">Refactoring API Platform Multi-Région</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-bold text-primary dark:text-primary-light mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span data-i18n="cases.case3.context">Contexte</span>
+                            </h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case3.context_text">API critique de provisioning cloud (Cloud Functions) avec problèmes de performance, fiabilité et maintenabilité. Besoin de scalabilité multi-région et SLA 99.9%.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary dark:text-primary-light mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span data-i18n="cases.case3.problem">Défi</span>
+                            </h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case3.problem_text">Architecture monolithique Cloud Functions, cold starts, absence d'observabilité, incidents fréquents, impossible de scaler en multi-région.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl mb-6 border border-gray-200 dark:border-gray-700">
+                        <h4 class="font-bold text-primary dark:text-primary-light mb-3 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
                             </svg>
-                        </div>
-                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg text-xs font-medium" data-i18n="projects.terraform_provider.type">Platform Engineering</span>
+                            <span data-i18n="cases.case3.solution">Solution</span>
+                        </h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case3.solution_text">Migration complète vers FastAPI sur Cloud Run. Architecture multi-région active-active, health checks, observability Datadog, error handling standardisé, automated testing (pytest), CI/CD robuste.</p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white" data-i18n="projects.terraform_provider.title">Terraform Provider Custom</h3>
-                    <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed" data-i18n="projects.terraform_provider.description">
-                        Conception et développement d'un Terraform provider custom utilisant le Terraform Plugin Framework en Golang pour l'industrialisation des ressources réseau (VPC, subnets, certificats). Intégration complète avec le workflow CI/CD et tests automatisés.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-lg text-xs font-medium">Golang</span>
-                        <span class="px-3 py-1.5 bg-purple-100 dark:bg-purple-900/30 text-terraform rounded-lg text-xs font-medium">Terraform</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">IaC</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">CI/CD</span>
-                    </div>
-                </div>
-                
-                <!-- Project 2: FastAPI Platform -->
-                <div class="card-animate group bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-800/50 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"></path>
-                                <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"></path>
-                                <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"></path>
+                    
+                    <div>
+                        <h4 class="font-bold text-green-600 dark:text-green-400 mb-3 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
+                            <span data-i18n="cases.case3.impact">Impact</span>
+                        </h4>
+                        <div class="grid md:grid-cols-2 gap-3">
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case3.impact_item1">SLA passé de 95% à 99.95%</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case3.impact_item2">Latence P95 réduite de 60%</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case3.impact_item3">Incidents production réduits de 80%</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case3.impact_item4">Multi-région avec failover automatique</span>
+                            </div>
                         </div>
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg text-xs font-medium" data-i18n="projects.fastapi_platform.type">Cloud Architecture</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white" data-i18n="projects.fastapi_platform.title">Plateforme API Multi-région</h3>
-                    <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed" data-i18n="projects.fastapi_platform.description">
-                        Conception et déploiement d'une plateforme API FastAPI sur Cloud Run avec architecture multi-région. Refactoring d'une application critique (migration Cloud Functions → FastAPI), optimisation des performances et mise en place de l'observabilité.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg text-xs font-medium">Python</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">FastAPI</span>
-                        <span class="px-3 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-gcp rounded-lg text-xs font-medium">Cloud Run</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">Multi-region</span>
+                    
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-green-600 rounded-lg text-xs font-medium">FastAPI</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-green-600 rounded-lg text-xs font-medium">Cloud Run</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-green-600 rounded-lg text-xs font-medium">Multi-region</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-green-600 rounded-lg text-xs font-medium">Datadog</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-green-600 rounded-lg text-xs font-medium">pytest</span>
                     </div>
                 </div>
                 
-                <!-- Project 3: Landing Zone -->
-                <div class="card-animate group bg-gradient-to-br from-green-50 to-white dark:from-gray-800 dark:to-gray-800/50 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+                <!-- Case Study 4 - Abbreviated -->
+                <div class="card-premium bg-gradient-to-br from-orange-50 to-red-50 dark:from-gray-800 dark:to-red-900/20 p-8 md:p-10 rounded-3xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white" data-i18n="cases.case4.title">Framework Testing Infrastructure</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-bold text-primary dark:text-primary-light mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span data-i18n="cases.case4.context">Contexte</span>
+                            </h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case4.context_text">Équipe Platform Engineering d'une grande enseigne retail gérant une Landing Zone multi-cloud. Validation manuelle de l'infrastructure prenant 3 jours à chaque release.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary dark:text-primary-light mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span data-i18n="cases.case4.problem">Défi</span>
+                            </h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case4.problem_text">Absence de tests automatisés pour l'infrastructure Terraform. Régressions fréquentes, confiance faible dans les déploiements, vélocité limitée.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl mb-6 border border-gray-200 dark:border-gray-700">
+                        <h4 class="font-bold text-primary dark:text-primary-light mb-3 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
                             </svg>
-                        </div>
-                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg text-xs font-medium" data-i18n="projects.landing_zone.type">Cloud Foundation</span>
+                            <span data-i18n="cases.case4.solution">Solution</span>
+                        </h4>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case4.solution_text">Implémentation d'un framework de tests end-to-end avec Terraform test. Tests de validation des ressources, connectivity checks, security posture verification. Intégration CI/CD avec GitHub Actions.</p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white" data-i18n="projects.landing_zone.title">Landing Zone Multi-Cloud</h3>
-                    <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed" data-i18n="projects.landing_zone.description">
-                        Gestion et MCO d'une Landing Zone multi-cloud (GCP, AWS, Azure) pour des centaines d'équipes. Automatisation des tâches récurrentes, support niveau 3, gestion d'incidents critiques avec post-mortems, et amélioration continue de la fiabilité.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-gcp rounded-lg text-xs font-medium">GCP</span>
-                        <span class="px-3 py-1.5 bg-orange-100 dark:bg-orange-900/30 text-aws rounded-lg text-xs font-medium">AWS</span>
-                        <span class="px-3 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-azure rounded-lg text-xs font-medium">Azure</span>
-                        <span class="px-3 py-1.5 bg-purple-100 dark:bg-purple-900/30 text-terraform rounded-lg text-xs font-medium">Terraform</span>
-                    </div>
-                </div>
-                
-                <!-- Project 4: Testing Framework -->
-                <div class="card-animate group bg-gradient-to-br from-orange-50 to-white dark:from-gray-800 dark:to-gray-800/50 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    
+                    <div>
+                        <h4 class="font-bold text-green-600 dark:text-green-400 mb-3 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
+                            <span data-i18n="cases.case4.impact">Impact</span>
+                        </h4>
+                        <div class="grid md:grid-cols-2 gap-3">
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case4.impact_item1">Temps de validation réduit de 3 jours à 30 minutes</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case4.impact_item2">Régressions détectées automatiquement (0 incident post-release)</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case4.impact_item3">Fréquence de release augmentée de 2x/mois à hebdomadaire</span>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="cases.case4.impact_item4">Confiance équipe augmentée, déploiements sereins</span>
+                            </div>
                         </div>
-                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg text-xs font-medium" data-i18n="projects.testing_framework.type">DevOps & Quality</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white" data-i18n="projects.testing_framework.title">Framework de Tests Automatisés</h3>
-                    <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed" data-i18n="projects.testing_framework.description">
-                        Implémentation de tests automatisés end-to-end avec Terraform test, réduisant drastiquement les temps de validation de 3 jours à 30 minutes. Amélioration de la qualité et de la vélocité des déploiements infrastructure.
-                    </p>
+                    
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-orange-600 rounded-lg text-xs font-medium">Terraform Test</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-orange-600 rounded-lg text-xs font-medium">GitHub Actions</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-orange-600 rounded-lg text-xs font-medium">Automation</span>
+                        <span class="px-3 py-1 bg-white dark:bg-gray-900 text-orange-600 rounded-lg text-xs font-medium">Quality</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="stack" class="py-24 bg-gray-50 dark:bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4" data-i18n="stack.title">Stack Technique</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="stack.subtitle">Technologies maîtrisées pour construire des plateformes enterprise-grade</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Cloud Providers -->
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-white" data-i18n="stack.category1">Cloud Providers</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-purple-100 dark:bg-purple-900/30 text-terraform rounded-lg text-xs font-medium">Terraform Test</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">Automation</span>
-                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium">CI/CD</span>
-                        <span class="px-3 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg text-xs font-medium">Quality</span>
+                        <span class="px-3 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg text-sm font-medium">GCP</span>
+                        <span class="px-3 py-1.5 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-lg text-sm font-medium">AWS</span>
+                        <span class="px-3 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg text-sm font-medium">Azure</span>
+                    </div>
+                </div>
+                
+                <!-- Infrastructure & IaC -->
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-white" data-i18n="stack.category2">Infrastructure & IaC</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg text-sm font-medium">Terraform</span>
+                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium">Providers</span>
+                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium">Landing Zones</span>
+                    </div>
+                </div>
+                
+                <!-- Development & APIs -->
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-white" data-i18n="stack.category3">Development & APIs</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg text-sm font-medium">Python</span>
+                        <span class="px-3 py-1.5 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-lg text-sm font-medium">Golang</span>
+                        <span class="px-3 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg text-sm font-medium">FastAPI</span>
+                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium">Cloud Run</span>
+                    </div>
+                </div>
+                
+                <!-- CI/CD & Testing -->
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-white" data-i18n="stack.category4">CI/CD & Testing</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium">GitHub Actions</span>
+                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium">GitLab CI</span>
+                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium">pytest</span>
+                        <span class="px-3 py-1.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg text-sm font-medium">Terraform Test</span>
+                    </div>
+                </div>
+                
+                <!-- Observability & Security -->
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-white" data-i18n="stack.category5">Observability & Security</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg text-sm font-medium">Datadog</span>
+                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium">Vault</span>
+                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium">Docker</span>
+                    </div>
+                </div>
+                
+                <!-- Methodologies -->
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-white" data-i18n="stack.category6">Methodologies</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg text-sm font-medium">Agile / Scrum</span>
+                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium">DevOps</span>
+                        <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium">Platform Engineering</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-24 bg-gray-50 dark:bg-gray-800/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text" data-i18n="certifications.title">Certifications</h2>
-            <p class="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto">Certifications professionnelles Cloud & Infrastructure</p>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- GCP Certification -->
-                <div class="card-animate group bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-blue-900/20 p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-blue-200 dark:border-blue-800">
-                    <div class="w-20 h-20 mx-auto mb-6 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        <svg class="w-10 h-10 text-gcp" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white" data-i18n="certifications.gcp.title">GCP Associate Cloud Engineer</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-2" data-i18n="certifications.gcp.issuer">Google Cloud Platform</p>
-                    <p class="text-gray-700 dark:text-gray-300 font-medium mb-4" data-i18n="certifications.gcp.date">Février 2025</p>
-                    <span class="inline-block px-4 py-2 bg-gcp text-white rounded-lg text-sm font-semibold">Certification</span>
-                </div>
-                
-                <!-- Terraform Certification -->
-                <div class="card-animate group bg-gradient-to-br from-purple-50 to-purple-100 dark:from-gray-800 dark:to-purple-900/20 p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-purple-200 dark:border-purple-800">
-                    <div class="w-20 h-20 mx-auto mb-6 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        <svg class="w-10 h-10 text-terraform" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white" data-i18n="certifications.terraform.title">Terraform Associate (003)</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-2" data-i18n="certifications.terraform.issuer">HashiCorp</p>
-                    <p class="text-gray-700 dark:text-gray-300 font-medium mb-4" data-i18n="certifications.terraform.date">Septembre 2024</p>
-                    <span class="inline-block px-4 py-2 bg-terraform text-white rounded-lg text-sm font-semibold">Certification</span>
-                </div>
-                
-                <!-- AWS Certification -->
-                <div class="card-animate group bg-gradient-to-br from-orange-50 to-orange-100 dark:from-gray-800 dark:to-orange-900/20 p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-orange-200 dark:border-orange-800">
-                    <div class="w-20 h-20 mx-auto mb-6 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        <svg class="w-10 h-10 text-aws" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white" data-i18n="certifications.aws.title">AWS Cloud Practitioner</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-2" data-i18n="certifications.aws.issuer">Amazon Web Services</p>
-                    <p class="text-gray-700 dark:text-gray-300 font-medium mb-4" data-i18n="certifications.aws.date">Novembre 2022</p>
-                    <span class="inline-block px-4 py-2 bg-aws text-white rounded-lg text-sm font-semibold">Foundational</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text" data-i18n="blog.title">Articles & Blog</h2>
-            <p class="text-center text-gray-600 dark:text-gray-400 mb-4 max-w-2xl mx-auto" data-i18n="blog.subtitle">Partage de connaissances et retours d'expérience</p>
-            
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-gray-800 dark:to-purple-900/20 p-12 rounded-2xl border border-gray-200 dark:border-gray-700">
-                    <div class="w-16 h-16 mx-auto mb-6 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center">
-                        <svg class="w-8 h-8 text-primary dark:text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white" data-i18n="blog.coming_soon">Articles à venir prochainement...</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6" data-i18n="blog.topics">
-                        Sujets couverts : Platform Engineering, Terraform, Cloud Architecture, DevOps Best Practices
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-3">
-                        <span class="px-4 py-2 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">📝 Terraform Tips</span>
-                        <span class="px-4 py-2 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">☁️ Cloud Best Practices</span>
-                        <span class="px-4 py-2 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">🚀 Platform Engineering</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 dark:from-gray-900 dark:via-gray-900 dark:to-purple-900/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text" data-i18n="contact.title">Contact</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-300 text-center mb-16 max-w-3xl mx-auto" data-i18n="contact.intro">
-                Intéressé par une collaboration ou simplement envie d'échanger sur le Cloud et le Platform Engineering ? N'hésitez pas à me contacter !
-            </p>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                <!-- Email -->
-                <a href="mailto:hammoudi.pro6@gmail.com" data-testid="contact-email" class="card-animate group bg-white dark:bg-gray-800 p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                    <svg class="w-12 h-12 mx-auto mb-4 text-primary dark:text-primary-light group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
-                    <div class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 font-semibold" data-i18n="contact.email.label">Email</div>
-                    <div class="text-gray-900 dark:text-white font-medium text-sm">hammoudi.pro6@gmail.com</div>
-                </a>
-                
-                <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/mohamed-said-hammoudi" target="_blank" rel="noopener noreferrer" data-testid="contact-linkedin" class="card-animate group bg-white dark:bg-gray-800 p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                    <svg class="w-12 h-12 mx-auto mb-4 text-primary dark:text-primary-light group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                    </svg>
-                    <div class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 font-semibold" data-i18n="contact.linkedin.label">LinkedIn</div>
-                    <div class="text-gray-900 dark:text-white font-medium text-sm">mohamed-said-hammoudi</div>
-                </a>
-                
-                <!-- GitHub -->
-                <a href="https://github.com/Hammoudi-Said" target="_blank" rel="noopener noreferrer" data-testid="contact-github" class="card-animate group bg-white dark:bg-gray-800 p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-                    <svg class="w-12 h-12 mx-auto mb-4 text-primary dark:text-primary-light group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                    </svg>
-                    <div class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 font-semibold" data-i18n="contact.github.label">GitHub</div>
-                    <div class="text-gray-900 dark:text-white font-medium text-sm">Hammoudi-Said</div>
-                </a>
-                
-                <!-- Location -->
-                <div class="card-animate bg-white dark:bg-gray-800 p-8 rounded-2xl text-center border border-gray-200 dark:border-gray-700">
-                    <svg class="w-12 h-12 mx-auto mb-4 text-primary dark:text-primary-light" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                    </svg>
-                    <div class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 font-semibold" data-i18n="contact.location.label">Localisation</div>
-                    <div class="text-gray-900 dark:text-white font-medium text-sm" data-i18n="contact.location.value">Lens (62300), Île-de-France</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 dark:bg-black text-white py-12 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="mb-2 text-gray-300" data-i18n="footer.copyright">&copy; 2025 Said HAMMOUDI. Tous droits réservés.</p>
-                <p class="text-gray-500 text-sm" data-i18n="footer.built_with">Conçu avec HTML, Tailwind CSS & JavaScript</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="assets/js/i18n.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- Continue in next message due to size... -->
+    
+    <script src="/assets/js/i18n.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>
