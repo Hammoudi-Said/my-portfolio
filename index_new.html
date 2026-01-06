@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Said HAMMOUDI - Cloud & Platform Engineer Consultant | Expert multi-cloud (GCP, AWS, Azure), Terraform, Infrastructure as Code | Disponible Avril 2026 | Paris, Hybrid">
+    <meta name="keywords" content="Cloud Consultant, Platform Engineer, Cloud Architect, GCP, AWS, Azure, Terraform Provider, Infrastructure as Code, Landing Zone, FastAPI, Freelance Cloud Engineer, Paris">
+    <meta name="author" content="Said HAMMOUDI">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Said HAMMOUDI | Cloud & Platform Engineer Consultant">
+    <meta property="og:description" content="Consultant indépendant spécialisé en Platform Engineering et fondations cloud multi-cloud. Disponible Avril 2026.">
+    <meta property="og:image" content="https://ui-avatars.com/api/?name=Said+Hammoudi&size=400&background=635BFF&color=fff&bold=true">
+    
+    <title>Said HAMMOUDI | Cloud & Platform Engineer Consultant</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#635BFF',
+                        'primary-dark': '#4F46E5',
+                        'primary-light': '#818CF8',
+                        secondary: '#00D4FF',
+                        accent: '#7C3AED',
+                        gcp: '#4285F4',
+                        aws: '#FF9900',
+                        terraform: '#7B42BC',
+                        azure: '#0078D4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #635BFF 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .dark .gradient-text {
+            background: linear-gradient(135deg, #818CF8 0%, #A78BFA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Fade-in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #635BFF;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4F46E5;
+        }
+        
+        /* Premium card hover effect */
+        .card-premium {
+            transition: all 0.3s ease;
+        }
+        
+        .card-premium:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(99, 91, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-xl font-bold gradient-text hover:opacity-80 transition-opacity" data-i18n="nav.name">Said HAMMOUDI</a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors text-sm font-medium" data-i18n="nav.about">Profil</a>
+                    <a href="#expertise" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors text-sm font-medium" data-i18n="nav.expertise">Expertise</a>
+                    <a href="#cases" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors text-sm font-medium" data-i18n="nav.cases">Cas d'usage</a>
+                    <a href="#experience" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors text-sm font-medium" data-i18n="nav.experience">Parcours</a>
+                    <a href="#approach" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors text-sm font-medium" data-i18n="nav.approach">Approche</a>
+                    <a href="#contact" class="px-4 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-all text-sm" data-i18n="nav.contact">Disponibilité</a>
+                    
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle theme">
+                        <svg class="w-5 h-5 sun-icon hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="w-5 h-5 moon-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Language Switcher -->
+                    <div class="flex items-center space-x-2 pl-4 border-l border-gray-200 dark:border-gray-700">
+                        <button onclick="switchLanguage('fr')" id="lang-fr" class="px-3 py-1.5 rounded-lg text-sm font-medium transition-all bg-primary text-white">FR</button>
+                        <button onclick="switchLanguage('en')" id="lang-en" class="px-3 py-1.5 rounded-lg text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700">EN</button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#about" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.about">Profil</a>
+                <a href="#expertise" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.expertise">Expertise</a>
+                <a href="#cases" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.cases">Cas d'usage</a>
+                <a href="#experience" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.experience">Parcours</a>
+                <a href="#approach" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.approach">Approche</a>
+                <a href="#contact" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary" data-i18n="nav.contact">Disponibilité</a>
+                
+                <div class="pt-3 border-t border-gray-200 dark:border-gray-700 space-y-3">
+                    <div class="flex space-x-2">
+                        <button onclick="switchLanguage('fr')" id="lang-fr-mobile" class="flex-1 px-3 py-2 rounded-lg text-sm font-medium bg-primary text-white">🇫🇷 FR</button>
+                        <button onclick="switchLanguage('en')" id="lang-en-mobile" class="flex-1 px-3 py-2 rounded-lg text-sm font-medium bg-gray-100 dark:bg-gray-700">🇬🇧 EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-24 bg-gradient-to-br from-gray-50 via-white to-purple-50/20 dark:from-gray-900 dark:via-gray-900 dark:to-purple-900/10 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Content -->
+                <div class="space-y-8">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 dark:bg-primary/20 rounded-full">
+                        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                        <span class="text-primary dark:text-primary-light text-sm font-semibold" data-i18n="hero.badge">Cloud & Platform Engineer Consultant</span>
+                    </div>
+                    
+                    <div>
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
+                            <span class="text-gray-600 dark:text-gray-400 text-3xl md:text-4xl font-normal block mb-2" data-i18n="hero.greeting">Architecte de</span>
+                            <span class="gradient-text" data-i18n="hero.title">Plateformes Cloud Fiables & Scalables</span>
+                        </h1>
+                        <div class="inline-block px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg text-sm font-semibold mb-6">
+                            <span data-i18n="hero.subtitle">Disponible Avril 2026</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-2xl" data-i18n="hero.description">
+                        Consultant indépendant spécialisé en Platform Engineering et fondations cloud multi-cloud. J'industrialise des infrastructures cloud fiables, automatisées et orientées self-service pour accélérer la livraison produit.
+                    </p>
+                    
+                    <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span data-i18n="hero.location">Paris • Hybride</span>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="group px-8 py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center space-x-2">
+                            <span data-i18n="hero.cta.availability">Discuter d'un projet</span>
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                        <a href="#cases" class="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all border-2 border-gray-200 dark:border-gray-700" data-i18n="hero.cta.cases">Voir les cas d'usage</a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-gray-200 dark:border-gray-700">
+                        <div>
+                            <div class="text-4xl font-bold gradient-text">3+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="hero.stats.years">Années d'expertise</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold gradient-text">3</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="hero.stats.platforms">Plateformes cloud</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold gradient-text">200+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="hero.stats.teams">Équipes accompagnées</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold gradient-text">94%</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="hero.stats.automation">Gain temps de validation</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Profile Photo -->
+                <div class="flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-primary to-accent rounded-full opacity-20 blur-2xl"></div>
+                        <img src="https://ui-avatars.com/api/?name=Said+Hammoudi&size=400&background=635BFF&color=fff&bold=true&font-size=0.4" 
+                             alt="Said HAMMOUDI" 
+                             class="relative w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-white dark:border-gray-800 shadow-2xl object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Profile Section -->
+    <section id="about" class="py-24 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4" data-i18n="about.title">Consultant Platform Engineering</h2>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-8 mb-16">
+                <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed" data-i18n="about.paragraph1">
+                    En tant que consultant Cloud & Platform Engineer, je construis des fondations cloud qui permettent aux organisations d'accélérer leur time-to-market tout en garantissant fiabilité, sécurité et gouvernance.
+                </p>
+                <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed" data-i18n="about.paragraph2">
+                    Mon approche combine expertise technique approfondie (Infrastructure as Code, custom Terraform providers, architectures cloud natives) et vision pragmatique de la livraison. Je ne construis pas de l'infrastructure pour l'infrastructure : je conçois des plateformes qui créent de la valeur métier mesurable.
+                </p>
+            </div>
+            
+            <!-- Philosophy -->
+            <div class="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-gray-800 dark:to-purple-900/20 p-10 rounded-3xl border border-gray-200 dark:border-gray-700">
+                <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 gradient-text" data-i18n="about.philosophy.title">Ma philosophie Platform Engineering</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <div class="text-3xl mb-3">🎯</div>
+                        <h4 class="font-bold text-lg mb-2 text-gray-900 dark:text-white" data-i18n="about.philosophy.item1.title">Platform as a Product</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.philosophy.item1.desc">Traiter l'infrastructure comme un produit avec des utilisateurs internes, des métriques de satisfaction et une amélioration continue</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <div class="text-3xl mb-3">🚀</div>
+                        <h4 class="font-bold text-lg mb-2 text-gray-900 dark:text-white" data-i18n="about.philosophy.item2.title">Delivery-First Mindset</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.philosophy.item2.desc">Réduire les frictions, accélérer les déploiements, autonomiser les équipes produit sans compromis sur la qualité</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <div class="text-3xl mb-3">📈</div>
+                        <h4 class="font-bold text-lg mb-2 text-gray-900 dark:text-white" data-i18n="about.philosophy.item3.title">Build for Scale</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.philosophy.item3.desc">Concevoir dès le départ pour la scalabilité technique et organisationnelle (multi-régions, multi-comptes, centaines d'équipes)</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <div class="text-3xl mb-3">⚡</div>
+                        <h4 class="font-bold text-lg mb-2 text-gray-900 dark:text-white" data-i18n="about.philosophy.item4.title">Automation & Quality</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="about.philosophy.item4.desc">Automatiser systématiquement, tester rigoureusement, documenter clairement pour garantir maintenabilité et fiabilité</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise & Services Section -->
+    <section id="expertise" class="py-24 bg-gray-50 dark:bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4" data-i18n="expertise.title">Domaines d'Expertise</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="expertise.subtitle">Services de conseil en Cloud & Platform Engineering</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Service 1 -->
+                <div class="card-premium bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white" data-i18n="expertise.service1.title">Platform Engineering & Cloud Foundations</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed" data-i18n="expertise.service1.desc">Conception et industrialisation de Landing Zones multi-cloud (GCP, AWS, Azure). Architecture des fondations organisationnelles : governance, security, networking, observability.</p>
+                    <div class="flex items-start space-x-2 text-primary dark:text-primary-light">
+                        <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-semibold" data-i18n="expertise.service1.value">Réduit de 6 mois à 6 semaines le time-to-platform pour nouvelles BU</span>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="card-premium bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
+                    <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white" data-i18n="expertise.service2.title">Infrastructure as Code & Custom Providers</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed" data-i18n="expertise.service2.desc">Développement de Terraform providers customs (Plugin Framework, Golang). Modules réutilisables, testing automatisé (Terraform test, pytest), CI/CD pipelines.</p>
+                    <div class="flex items-start space-x-2 text-primary dark:text-primary-light">
+                        <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-semibold" data-i18n="expertise.service2.value">Accélère le provisioning de ressources complexes de 3 jours à 30 minutes</span>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="card-premium bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"></path>
+                            <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"></path>
+                            <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white" data-i18n="expertise.service3.title">Cloud APIs & Backend Development</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed" data-i18n="expertise.service3.desc">Conception d'APIs cloud natives (FastAPI, Cloud Run). Migration et refactoring d'applications legacy vers architectures modernes, multi-région, hautement disponibles.</p>
+                    <div class="flex items-start space-x-2 text-primary dark:text-primary-light">
+                        <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-semibold" data-i18n="expertise.service3.value">Améliore reliability (99.9% SLA) et réduit les coûts opérationnels de 40%</span>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="card-premium bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
+                    <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white" data-i18n="expertise.service4.title">Automation, CI/CD & Testing</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed" data-i18n="expertise.service4.desc">Industrialisation des workflows (GitHub Actions, GitLab CI). Automated testing frameworks, quality gates, observability (Datadog), secrets management (Vault).</p>
+                    <div class="flex items-start space-x-2 text-primary dark:text-primary-light">
+                        <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-semibold" data-i18n="expertise.service4.value">Réduit les incidents production de 70% via testing et observabilité</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Continue with remaining sections... Due to size limits, I'll create the rest in a follow-up -->
+    
+    <!-- Scripts -->
+    <script src="/assets/js/i18n.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
