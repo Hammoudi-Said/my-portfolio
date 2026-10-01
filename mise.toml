@@ -1,0 +1,14 @@
+[tools]
+node = "20.19.4"
+
+[tasks.dev]
+description = "Run Next.js dev server with Turbopack"
+run = "npm run dev"
+
+[tasks.build]
+description = "Build production Next.js application"
+run = "npm run build"
+
+[tasks.lint]
+description = "Run ESLint and TypeScript check"
+run = "npm run lint"
