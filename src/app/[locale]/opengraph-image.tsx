@@ -19,13 +19,13 @@ export default async function OpengraphImage({ params }: { params: Promise<{ loc
           flexDirection: "column",
           justifyContent: "center",
           padding: 80,
-          background: "#060913",
-          color: "#f1f5f9",
+          background: "#ffffff",
+          color: "#202124",
         }}
       >
-        <div style={{ fontSize: 40, color: "#38bdf8" }}>Said Hammoudi</div>
-        <div style={{ fontSize: 76, fontWeight: 700, marginTop: 24, lineHeight: 1.1 }}>{t("ogTitle")}</div>
-        <div style={{ fontSize: 34, marginTop: 32, color: "#94a3b8" }}>{t("ogTagline")}</div>
+        <div style={{ fontSize: 40, color: "#1a73e8" }}>Said Hammoudi</div>
+        <div style={{ fontSize: 76, fontWeight: 400, marginTop: 24, lineHeight: 1.1 }}>{t("ogTitle")}</div>
+        <div style={{ fontSize: 34, marginTop: 32, color: "#5f6368" }}>{t("ogTagline")}</div>
       </div>
     ),
     size,

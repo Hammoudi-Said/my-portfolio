@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -7,7 +7,7 @@ import { routing } from "@/i18n/routing";
 import { SITE, SITE_URL } from "@/lib/site";
 import "../globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const sans = Roboto({ variable: "--font-sans", subsets: ["latin"], weight: ["300", "400", "500", "700"], display: "swap" });
 
 const OG_LOCALE = { en: "en_US", fr: "fr_FR" } as const;
 
@@ -83,8 +83,8 @@ export default async function LocaleLayout({
   };
 
   return (
-    <html lang={locale} className={`dark ${geistSans.variable}`}>
-      <body className="min-h-screen bg-background font-sans text-slate-200 antialiased selection:bg-sky-400 selection:text-slate-950">
+    <html lang={locale} className={sans.variable}>
+      <body className="min-h-screen bg-white font-sans text-ink antialiased selection:bg-brand-soft">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}

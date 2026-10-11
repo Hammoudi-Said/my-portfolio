@@ -10,18 +10,18 @@ export function Header() {
   const locale = useLocale();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-800 bg-background/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
-        <span className="font-semibold text-white">Said Hammoudi</span>
-        <nav aria-label="Main" className="hidden gap-6 text-sm text-slate-300 md:flex">
+        <a href="#top" className="text-lg font-medium text-ink">Said Hammoudi</a>
+        <nav aria-label="Main" className="hidden gap-8 text-sm text-muted md:flex">
           {NAV.map((id) => (
-            <a key={id} href={`#${id}`} className="hover:text-white focus-visible:text-white">
+            <a key={id} href={`#${id}`} className="hover:text-ink">
               {t(`nav.${id}`)}
             </a>
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <div role="group" aria-label={t("a11y.language")} className="flex gap-1 text-sm">
+          <div role="group" aria-label={t("a11y.language")} className="flex text-sm">
             {routing.locales.map((l) => (
               <Link
                 key={l}
@@ -29,7 +29,7 @@ export function Header() {
                 locale={l}
                 lang={l}
                 aria-current={l === locale ? "true" : undefined}
-                className={`rounded px-2 py-1 uppercase ${l === locale ? "bg-slate-800 text-white" : "text-slate-400 hover:text-white"}`}
+                className={`rounded-full px-3 py-1.5 uppercase ${l === locale ? "bg-brand-soft font-medium text-brand-dark" : "text-muted hover:text-ink"}`}
               >
                 {l}
               </Link>
@@ -37,7 +37,7 @@ export function Header() {
           </div>
           <a
             href={`mailto:${SITE.email}`}
-            className="rounded-md bg-sky-400 px-3 py-2 text-sm font-semibold text-slate-950 hover:bg-sky-300"
+            className="hidden rounded-full bg-brand px-5 py-2 text-sm font-medium text-white hover:bg-brand-dark sm:inline-block"
           >
             {t("nav.cta")}
           </a>

@@ -1,54 +1,50 @@
 {
   "meta": {
-    "title": "Said Hammoudi | Ingénieur Cloud & DevOps freelance pour startups et PME",
-    "description": "Ingénieur cloud et plateforme freelance (ex-Decathlon, ADEO). J'aide les startups et PME à construire des fondations GCP, AWS et Azure sécurisées, à automatiser la livraison avec Terraform et le CI/CD, et à exploiter des plateformes fiables.",
-    "ogTitle": "Ingénieur Cloud & DevOps freelance",
-    "ogTagline": "Fondations cloud sécurisées, Terraform et CI/CD pour startups et PME"
+    "title": "Said Hammoudi | Ingénieur Cloud Ops & Platform Engineer freelance",
+    "description": "Ingénieur Cloud Ops et Platform Engineer freelance (ex-Decathlon, ADEO) pour missions longue durée. J'exploite et fais évoluer des plateformes multi-cloud sur GCP, AWS et Azure avec Terraform, automatisation et responsabilité du run.",
+    "ogTitle": "Cloud Ops & Platform Engineer",
+    "ogTagline": "Freelance, pour missions longue durée sur GCP, AWS et Azure"
   },
   "a11y": { "skip": "Aller au contenu", "language": "Langue" },
-  "nav": { "services": "Services", "proof": "Résultats", "experience": "Expérience", "contact": "Contact", "cta": "Me écrire" },
+  "nav": { "services": "Expertise", "proof": "Résultats", "experience": "Expérience", "contact": "Contact", "cta": "Me contacter" },
   "hero": {
-    "eyebrow": "Ingénieur Cloud & Plateforme freelance",
-    "title": "Livrez plus vite sur le cloud, sans les casse-têtes d'infrastructure.",
-    "subtitle": "J'aide les startups et PME à construire des fondations cloud sécurisées, automatiser la livraison et exploiter des plateformes fiables sur GCP, AWS et Azure. Quatre ans au sein des équipes plateforme de Decathlon et ADEO.",
-    "cta": "Me écrire",
-    "cv": "Télécharger mon CV",
-    "availability": "Disponible pour des missions freelance · Remote, Paris, Lille",
+    "badge": "Freelance · Ouvert aux missions longue durée",
+    "title": "Cloud Ops et Platform Engineering, dans la durée.",
+    "subtitle": "J'intègre votre équipe plateforme pour des mois, pas des jours. J'exploite et fais évoluer des plateformes multi-cloud sur GCP, AWS et Azure, avec infrastructure as code, automatisation et vraie responsabilité du run et des astreintes.",
+    "cta": "Me contacter",
+    "cv": "Télécharger le CV",
+    "availability": "Remote, Paris et Lille · Missions de 6 mois et plus",
     "photoAlt": "Portrait de Said Hammoudi"
   },
   "services": {
-    "title": "Comment je peux vous aider",
-    "subtitle": "Quatre services ciblés, livrés sous forme de code que vous possédez.",
+    "title": "Ce que je prends en charge",
+    "subtitle": "Le périmètre d'une mission longue durée type.",
     "items": [
       {
-        "title": "Fondations cloud",
-        "text": "Une base sécurisée et bien structurée sur GCP, AWS ou Azure : comptes et projets, réseau, IAM et garde-fous, le tout en Terraform.",
-        "points": ["Conception et mise en place de landing zones", "IAM au moindre privilège et politiques d'organisation", "Modules Terraform réutilisables"]
+        "title": "Cloud operations",
+        "text": "Prise en charge au quotidien d'environnements multi-cloud : gestion des incidents, support L3 et astreintes, gestion des changements et amélioration continue du run."
       },
       {
-        "title": "CI/CD et tests d'infrastructure",
-        "text": "Remplacez les vérifications manuelles par des pipelines automatisés pour livrer vite et en sécurité.",
-        "points": ["Pipelines GitHub Actions", "Suites terraform test et pytest", "Analyse des dépendances et du code"]
+        "title": "Platform engineering",
+        "text": "Landing zones, réseau, IAM et garde-fous sur GCP, AWS et Azure, construits en modules Terraform réutilisables par les équipes produit."
       },
       {
-        "title": "Plateformes internes et APIs",
-        "text": "Des outils en libre-service pour que vos développeurs obtiennent ce dont ils ont besoin sans attendre un ticket.",
-        "points": ["APIs de provisioning Python et FastAPI", "Providers Terraform custom en Go", "Documenté, testé, transmis"]
+        "title": "Automatisation et delivery",
+        "text": "CI/CD avec GitHub Actions et tests d'infrastructure automatisés avec terraform test et pytest, pour livrer vite et en sécurité."
       },
       {
-        "title": "Run et fiabilité",
-        "text": "Exploitation et gestion d'incidents sur des plateformes multi-cloud, en automatisant les tâches récurrentes.",
-        "points": ["Gestion des incidents et astreintes", "Observabilité avec Datadog", "Gestion des secrets avec Vault"]
+        "title": "Outillage interne et APIs",
+        "text": "APIs de provisioning en libre-service en Python et FastAPI, et providers Terraform custom en Go, pour supprimer tickets et étapes manuelles."
       }
     ]
   },
   "proof": {
-    "title": "Des résultats issus de missions réelles",
-    "subtitle": "Chiffres issus de mon travail chez Decathlon et ADEO.",
+    "title": "Références",
+    "subtitle": "Chiffres issus de mes missions chez Decathlon et ADEO.",
     "stats": [
-      { "value": "3 jours → 30 min", "label": "Temps de validation de l'infrastructure, grâce aux tests end-to-end automatisés (Decathlon)" },
-      { "value": "164 / mois", "label": "Tickets traités en autonomie en moyenne sur le run multi-cloud (Decathlon)" },
-      { "value": "4 ans", "label": "D'ingénierie cloud et plateforme dans de grandes équipes (Decathlon, ADEO)" }
+      { "value": "3 ans", "label": "De responsabilité continue sur la même plateforme de landing zones multi-cloud (Decathlon)" },
+      { "value": "164 / mois", "label": "Tickets traités en autonomie en moyenne, en run et support (Decathlon)" },
+      { "value": "3 jours → 30 min", "label": "Temps de validation de l'infrastructure, grâce aux tests end-to-end automatisés (Decathlon)" }
     ],
     "certsTitle": "Certifications",
     "certs": [
@@ -74,9 +70,9 @@
         "role": "Ingénieur Cloud & Platform Foundation",
         "period": "Oct. 2022 – Oct. 2025",
         "points": [
+          "Run de landing zones multi-cloud sur GCP et AWS : exploitation, support et astreintes L3, avec en moyenne 164 tickets par mois.",
           "Développement d'un provider Terraform custom en Go pour industrialiser les ressources réseau.",
-          "Validation de l'infrastructure ramenée de 3 jours à 30 minutes avec terraform test et pytest.",
-          "Run de landing zones multi-cloud sur GCP et AWS, avec en moyenne 164 tickets par mois."
+          "Validation de l'infrastructure ramenée de 3 jours à 30 minutes avec terraform test et pytest."
         ]
       },
       {
@@ -93,20 +89,28 @@
       }
     ]
   },
-  "process": {
-    "title": "Comment nous travaillons ensemble",
-    "steps": [
-      { "title": "Échange", "text": "Vous décrivez le problème par email. Nous convenons du périmètre, des objectifs et du calendrier." },
-      { "title": "Plan", "text": "J'examine votre existant et je propose un plan court et priorisé." },
-      { "title": "Livraison", "text": "Des incréments dans vos dépôts, avec documentation et transfert de compétences." }
+  "skills": {
+    "title": "Boîte à outils",
+    "groups": [
+      { "title": "Cloud", "items": ["Google Cloud", "AWS", "Azure", "Landing zones", "IAM", "Réseau"] },
+      { "title": "Infrastructure as code", "items": ["Terraform", "Terragrunt", "terraform test", "Docker", "Linux"] },
+      { "title": "Automatisation et code", "items": ["Python", "FastAPI", "Go", "Bash", "GitHub Actions", "pytest"] },
+      { "title": "Run et sécurité", "items": ["Datadog", "HashiCorp Vault", "Dependabot", "Code Scanning", "Jira", "ServiceNow"] }
+    ]
+  },
+  "engagement": {
+    "title": "Ma façon de travailler",
+    "subtitle": "Pensé pour les contrats longue durée, comme une extension de votre équipe.",
+    "terms": [
+      { "title": "Intégré à votre équipe", "text": "Je suis vos rituels, outils et standards, et prends la responsabilité d'un périmètre clair dès la première semaine." },
+      { "title": "Documenté et réversible", "text": "Tout vit dans vos dépôts, avec runbooks et ADR, pour que la connaissance reste dans l'équipe." },
+      { "title": "Localisation flexible", "text": "Remote en priorité, avec des jours sur site à Paris ou Lille si utile. Contrat via ma société de freelance." }
     ]
   },
   "contact": {
-    "title": "Parlons de votre projet cloud",
-    "text": "Décrivez votre projet en quelques lignes et je reviens vers vous.",
-    "cta": "Me écrire",
-    "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "title": "Vous cherchez un profil Cloud Ops ou Platform Engineer ?",
+    "text": "Envoyez-moi quelques lignes sur votre plateforme, le périmètre et le calendrier, et je reviens vers vous avec mes disponibilités.",
+    "cta": "Me contacter"
   },
   "footer": { "rights": "Tous droits réservés." }
 }

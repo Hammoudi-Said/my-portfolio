@@ -1,54 +1,50 @@
 {
   "meta": {
-    "title": "Said Hammoudi | Freelance Cloud & DevOps Engineer for Startups and SMEs",
-    "description": "Freelance cloud and platform engineer (ex-Decathlon, ADEO). I help startups and SMEs build secure GCP, AWS and Azure foundations, automate delivery with Terraform and CI/CD, and run reliable platforms.",
-    "ogTitle": "Freelance Cloud & DevOps Engineer",
-    "ogTagline": "Secure cloud foundations, Terraform and CI/CD for startups and SMEs"
+    "title": "Said Hammoudi | Freelance Cloud Ops & Platform Engineer",
+    "description": "Freelance Cloud Ops and Platform Engineer (ex-Decathlon, ADEO) for long-term missions. I run and evolve multi-cloud platforms on GCP, AWS and Azure with Terraform, automation and on-call ownership.",
+    "ogTitle": "Cloud Ops & Platform Engineer",
+    "ogTagline": "Freelance, for long-term missions on GCP, AWS and Azure"
   },
   "a11y": { "skip": "Skip to content", "language": "Language" },
-  "nav": { "services": "Services", "proof": "Results", "experience": "Experience", "contact": "Contact", "cta": "Email me" },
+  "nav": { "services": "Expertise", "proof": "Results", "experience": "Experience", "contact": "Contact", "cta": "Get in touch" },
   "hero": {
-    "eyebrow": "Freelance Cloud & Platform Engineer",
-    "title": "Ship faster on the cloud, without the infrastructure headaches.",
-    "subtitle": "I help startups and SMEs build secure cloud foundations, automate delivery and run reliable platforms on GCP, AWS and Azure. Four years inside the platform teams of Decathlon and ADEO.",
-    "cta": "Email me",
-    "cv": "Download my CV",
-    "availability": "Available for freelance missions · Remote, Paris, Lille",
+    "badge": "Freelance · Open to long-term contracts",
+    "title": "Cloud Ops and Platform Engineering, for the long run.",
+    "subtitle": "I join your platform team for months, not days. I operate and evolve multi-cloud platforms on GCP, AWS and Azure, with infrastructure as code, automation and real ownership of run and on-call.",
+    "cta": "Get in touch",
+    "cv": "Download CV",
+    "availability": "Remote, Paris and Lille · Missions of 6 months and more",
     "photoAlt": "Portrait of Said Hammoudi"
   },
   "services": {
-    "title": "How I can help",
-    "subtitle": "Four focused services, delivered as code you own.",
+    "title": "What I take on",
+    "subtitle": "The scope of a typical long-term mission.",
     "items": [
       {
-        "title": "Cloud foundations",
-        "text": "A secure, well-structured base on GCP, AWS or Azure: accounts and projects, networking, IAM and guardrails, all in Terraform.",
-        "points": ["Landing zone design and build", "Least-privilege IAM and org policies", "Reusable Terraform modules"]
+        "title": "Cloud operations",
+        "text": "Day-to-day ownership of multi-cloud environments: incident handling, L3 support and on-call, change management and continuous improvement of the run."
       },
       {
-        "title": "CI/CD and infrastructure testing",
-        "text": "Replace manual checks with automated pipelines so changes ship safely and quickly.",
-        "points": ["GitHub Actions pipelines", "terraform test and pytest suites", "Dependency and code scanning"]
+        "title": "Platform engineering",
+        "text": "Landing zones, networking, IAM and guardrails on GCP, AWS and Azure, built as reusable Terraform modules that product teams can adopt."
       },
       {
-        "title": "Internal platforms and APIs",
-        "text": "Self-service tooling so your developers can get what they need without waiting on a ticket.",
-        "points": ["Python and FastAPI provisioning APIs", "Custom Terraform providers in Go", "Documented, tested, handed over"]
+        "title": "Automation and delivery",
+        "text": "CI/CD with GitHub Actions and automated infrastructure testing with terraform test and pytest, so changes ship safely and quickly."
       },
       {
-        "title": "Run and reliability",
-        "text": "Hands-on operations and incident handling for multi-cloud platforms, with the recurring work automated away.",
-        "points": ["Incident and on-call handling", "Observability with Datadog", "Secrets management with Vault"]
+        "title": "Internal tooling and APIs",
+        "text": "Self-service provisioning APIs in Python and FastAPI, and custom Terraform providers in Go, to remove tickets and manual steps."
       }
     ]
   },
   "proof": {
-    "title": "Results from real missions",
-    "subtitle": "Figures from my work at Decathlon and ADEO.",
+    "title": "Track record",
+    "subtitle": "Figures from my missions at Decathlon and ADEO.",
     "stats": [
-      { "value": "3 days → 30 min", "label": "Infrastructure validation time, with automated end-to-end tests (Decathlon)" },
-      { "value": "164 / month", "label": "Average tickets handled autonomously on multi-cloud run (Decathlon)" },
-      { "value": "4 years", "label": "Cloud and platform engineering in large enterprise teams (Decathlon, ADEO)" }
+      { "value": "3 years", "label": "Continuous ownership of the same multi-cloud landing zone platform (Decathlon)" },
+      { "value": "164 / month", "label": "Average tickets handled autonomously in run and support (Decathlon)" },
+      { "value": "3 days → 30 min", "label": "Infrastructure validation time, with automated end-to-end tests (Decathlon)" }
     ],
     "certsTitle": "Certifications",
     "certs": [
@@ -74,9 +70,9 @@
         "role": "Cloud & Platform Foundation Engineer",
         "period": "Oct 2022 – Oct 2025",
         "points": [
+          "Ran multi-cloud landing zones on GCP and AWS: run, support and L3 on-call, averaging 164 tickets a month.",
           "Built a custom Terraform provider in Go to industrialise network resources.",
-          "Cut infrastructure validation from 3 days to 30 minutes with terraform test and pytest.",
-          "Ran multi-cloud landing zones on GCP and AWS, averaging 164 tickets a month."
+          "Cut infrastructure validation from 3 days to 30 minutes with terraform test and pytest."
         ]
       },
       {
@@ -93,20 +89,28 @@
       }
     ]
   },
-  "process": {
-    "title": "How we work together",
-    "steps": [
-      { "title": "Talk", "text": "You describe the problem by email. We agree on scope, goals and timing." },
-      { "title": "Plan", "text": "I review your current setup and propose a short, prioritised plan." },
-      { "title": "Deliver", "text": "Small increments in your repositories, with documentation and a proper handover." }
+  "skills": {
+    "title": "Toolbox",
+    "groups": [
+      { "title": "Cloud", "items": ["Google Cloud", "AWS", "Azure", "Landing zones", "IAM", "Networking"] },
+      { "title": "Infrastructure as code", "items": ["Terraform", "Terragrunt", "terraform test", "Docker", "Linux"] },
+      { "title": "Automation and code", "items": ["Python", "FastAPI", "Go", "Bash", "GitHub Actions", "pytest"] },
+      { "title": "Run and security", "items": ["Datadog", "HashiCorp Vault", "Dependabot", "Code Scanning", "Jira", "ServiceNow"] }
+    ]
+  },
+  "engagement": {
+    "title": "How I work",
+    "subtitle": "Built for long-term contracts, as an extension of your team.",
+    "terms": [
+      { "title": "Embedded in your team", "text": "I follow your rituals, tools and standards, and take ownership of a clear scope from week one." },
+      { "title": "Documented and reversible", "text": "Everything lives in your repositories, with runbooks and ADRs, so knowledge stays with the team." },
+      { "title": "Flexible location", "text": "Remote-first, with on-site days in Paris or Lille when it helps. Contracts through my freelance company." }
     ]
   },
   "contact": {
-    "title": "Let's talk about your cloud project",
-    "text": "Describe your project in a few lines and I will get back to you.",
-    "cta": "Email me",
-    "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "title": "Looking for a Cloud Ops or Platform engineer?",
+    "text": "Send me a few lines about your platform, the scope and the timeline, and I will reply with my availability.",
+    "cta": "Get in touch"
   },
   "footer": { "rights": "All rights reserved." }
 }

@@ -8,19 +8,21 @@ import { Header } from "@/components/Header";
 import { routing } from "@/i18n/routing";
 import { SITE } from "@/lib/site";
 
-interface Service { title: string; text: string; points: string[] }
+interface Service { title: string; text: string }
 interface Stat { value: string; label: string }
 interface Cert { name: string; date: string }
 interface Job { company: string; role: string; period: string; points: string[] }
-interface Step { title: string; text: string }
+interface SkillGroup { title: string; items: string[] }
+interface Term { title: string; text: string }
 
-const cta = "inline-flex items-center rounded-md bg-sky-400 px-5 py-3 font-semibold text-slate-950 hover:bg-sky-300";
-const sectionTitle = "text-2xl font-bold text-white sm:text-3xl";
+const primary = "inline-flex items-center rounded-full bg-brand px-7 py-3 font-medium text-white hover:bg-brand-dark";
+const secondary = "inline-flex items-center rounded-full border border-line px-7 py-3 font-medium text-brand hover:bg-brand-soft";
+const h2 = "text-3xl font-normal text-ink sm:text-4xl";
 
-function Section({ id, className = "", children }: { id: string; className?: string; children: React.ReactNode }) {
+function Section({ id, tone = "white", children }: { id: string; tone?: "white" | "surface"; children: React.ReactNode }) {
   return (
-    <section id={id} className={`mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 ${className}`}>
-      {children}
+    <section id={id} className={tone === "surface" ? "bg-surface" : "bg-white"}>
+      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">{children}</div>
     </section>
   );
 }
@@ -34,107 +36,125 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
 
   return (
     <>
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2 focus:text-slate-950">
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-brand focus:px-4 focus:py-2 focus:text-white">
         {t("a11y.skip")}
       </a>
       <Header />
       <main id="main">
-        <Section id="top" className="grid items-center gap-10 md:grid-cols-[1fr_auto]">
+        <section id="top" className="mx-auto grid max-w-5xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-28 md:grid-cols-[1fr_auto]">
           <div>
-            <p className="text-sm font-medium uppercase tracking-wide text-sky-400">{t("hero.eyebrow")}</p>
-            <h1 className="mt-4 text-4xl font-bold leading-tight text-white sm:text-5xl">{t("hero.title")}</h1>
-            <p className="mt-6 max-w-2xl text-lg text-slate-300">{t("hero.subtitle")}</p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href={mail} className={cta}>{t("hero.cta")}</a>
-              <a href={SITE.cv} className="font-medium text-slate-200 underline underline-offset-4 hover:text-white">
-                {t("hero.cv")}
-              </a>
+            <p className="inline-flex items-center gap-2 rounded-full bg-brand-soft px-4 py-1.5 text-sm font-medium text-brand-dark">
+              <span aria-hidden className="h-2 w-2 rounded-full bg-brand" />
+              {t("hero.badge")}
+            </p>
+            <h1 className="mt-6 text-4xl font-normal leading-tight text-ink sm:text-6xl">{t("hero.title")}</h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{t("hero.subtitle")}</p>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <a href={mail} className={primary}>{t("hero.cta")}</a>
+              <a href={SITE.cv} className={secondary}>{t("hero.cv")}</a>
             </div>
-            <p className="mt-6 text-sm text-slate-400">{t("hero.availability")}</p>
+            <p className="mt-6 text-sm text-muted">{t("hero.availability")}</p>
           </div>
           <Image
             src="/said-hammoudi.png"
             alt={t("hero.photoAlt")}
-            width={220}
-            height={220}
+            width={240}
+            height={240}
             priority
-            className="h-40 w-40 rounded-full border border-slate-700 object-cover md:h-56 md:w-56"
+            className="h-40 w-40 rounded-full object-cover md:h-60 md:w-60"
           />
-        </Section>
+        </section>
 
-        <Section id="services">
-          <h2 className={sectionTitle}>{t("services.title")}</h2>
-          <p className="mt-3 text-slate-400">{t("services.subtitle")}</p>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <Section id="services" tone="surface">
+          <h2 className={h2}>{t("services.title")}</h2>
+          <p className="mt-3 max-w-2xl text-muted">{t("services.subtitle")}</p>
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
             {(t.raw("services.items") as Service[]).map((s) => (
-              <article key={s.title} className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
-                <h3 className="text-lg font-semibold text-white">{s.title}</h3>
-                <p className="mt-2 text-slate-300">{s.text}</p>
-                <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-400">
-                  {s.points.map((p) => <li key={p}>{p}</li>)}
-                </ul>
+              <article key={s.title} className="rounded-2xl border border-line bg-white p-8">
+                <h3 className="text-xl font-medium text-ink">{s.title}</h3>
+                <p className="mt-3 leading-relaxed text-muted">{s.text}</p>
               </article>
             ))}
           </div>
         </Section>
 
         <Section id="proof">
-          <h2 className={sectionTitle}>{t("proof.title")}</h2>
-          <p className="mt-3 text-slate-400">{t("proof.subtitle")}</p>
-          <dl className="mt-10 grid gap-6 md:grid-cols-3">
+          <h2 className={h2}>{t("proof.title")}</h2>
+          <p className="mt-3 text-muted">{t("proof.subtitle")}</p>
+          <dl className="mt-12 grid gap-10 md:grid-cols-3">
             {(t.raw("proof.stats") as Stat[]).map((s) => (
-              <div key={s.value} className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
-                <dt className="text-3xl font-bold text-sky-400">{s.value}</dt>
-                <dd className="mt-2 text-sm text-slate-300">{s.label}</dd>
+              <div key={s.value}>
+                <dt className="text-4xl font-normal text-brand sm:text-5xl">{s.value}</dt>
+                <dd className="mt-3 leading-relaxed text-muted">{s.label}</dd>
               </div>
             ))}
           </dl>
-          <h3 className="mt-12 text-lg font-semibold text-white">{t("proof.certsTitle")}</h3>
-          <ul className="mt-4 grid gap-3 md:grid-cols-3">
+          <h3 className="mt-16 text-xl font-medium text-ink">{t("proof.certsTitle")}</h3>
+          <ul className="mt-5 flex flex-wrap gap-3">
             {(t.raw("proof.certs") as Cert[]).map((c) => (
-              <li key={c.name} className="rounded-lg border border-slate-800 px-4 py-3 text-sm">
-                <span className="block text-slate-200">{c.name}</span>
-                <span className="text-slate-400">{c.date}</span>
+              <li key={c.name} className="rounded-full border border-line px-5 py-2 text-sm text-ink">
+                {c.name} <span className="text-muted">· {c.date}</span>
               </li>
             ))}
           </ul>
         </Section>
 
-        <Section id="experience">
-          <h2 className={sectionTitle}>{t("experience.title")}</h2>
-          <ol className="mt-10 space-y-8">
+        <Section id="experience" tone="surface">
+          <h2 className={h2}>{t("experience.title")}</h2>
+          <ol className="mt-12 divide-y divide-line border-y border-line">
             {(t.raw("experience.items") as Job[]).map((j) => (
-              <li key={j.company} className="border-l-2 border-slate-800 pl-6">
-                <h3 className="font-semibold text-white">
-                  {j.company} <span className="font-normal text-slate-400">· {j.role}</span>
-                </h3>
-                <p className="text-sm text-slate-400">{j.period}</p>
-                <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-300">
-                  {j.points.map((p) => <li key={p}>{p}</li>)}
+              <li key={j.company} className="grid gap-4 py-8 md:grid-cols-[200px_1fr]">
+                <div>
+                  <h3 className="text-lg font-medium text-ink">{j.company}</h3>
+                  <p className="text-sm text-muted">{j.period}</p>
+                </div>
+                <div>
+                  <p className="font-medium text-ink">{j.role}</p>
+                  <ul className="mt-3 list-disc space-y-2 pl-5 leading-relaxed text-muted">
+                    {j.points.map((p) => <li key={p}>{p}</li>)}
+                  </ul>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </Section>
+
+        <Section id="skills">
+          <h2 className={h2}>{t("skills.title")}</h2>
+          <div className="mt-12 grid gap-10 md:grid-cols-2">
+            {(t.raw("skills.groups") as SkillGroup[]).map((g) => (
+              <div key={g.title}>
+                <h3 className="text-sm font-medium uppercase tracking-wide text-muted">{g.title}</h3>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {g.items.map((i) => (
+                    <li key={i} className="rounded-full bg-surface px-4 py-1.5 text-sm text-ink">{i}</li>
+                  ))}
                 </ul>
-              </li>
+              </div>
             ))}
-          </ol>
+          </div>
         </Section>
 
-        <Section id="process">
-          <h2 className={sectionTitle}>{t("process.title")}</h2>
-          <ol className="mt-10 grid gap-6 md:grid-cols-3">
-            {(t.raw("process.steps") as Step[]).map((s, i) => (
-              <li key={s.title} className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
-                <span className="text-sm font-semibold text-sky-400">0{i + 1}</span>
-                <h3 className="mt-1 font-semibold text-white">{s.title}</h3>
-                <p className="mt-2 text-sm text-slate-300">{s.text}</p>
-              </li>
+        <Section id="engagement" tone="surface">
+          <h2 className={h2}>{t("engagement.title")}</h2>
+          <p className="mt-3 max-w-2xl text-muted">{t("engagement.subtitle")}</p>
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            {(t.raw("engagement.terms") as Term[]).map((s) => (
+              <div key={s.title} className="rounded-2xl border border-line bg-white p-8">
+                <h3 className="text-lg font-medium text-ink">{s.title}</h3>
+                <p className="mt-3 leading-relaxed text-muted">{s.text}</p>
+              </div>
             ))}
-          </ol>
+          </div>
         </Section>
 
-        <Section id="contact" className="text-center">
-          <h2 className={sectionTitle}>{t("contact.title")}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-slate-300">{t("contact.text")}</p>
-          <a href={mail} className={`${cta} mt-8`}>{t("contact.cta")}</a>
-          <p className="mt-4 text-sm text-slate-400">{SITE.email}</p>
+        <Section id="contact">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className={h2}>{t("contact.title")}</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted">{t("contact.text")}</p>
+            <a href={mail} className={`${primary} mt-10`}>{t("contact.cta")}</a>
+            <p className="mt-5 text-sm text-muted">{SITE.email}</p>
+          </div>
         </Section>
       </main>
       <Footer />
