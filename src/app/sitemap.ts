@@ -1,20 +1,15 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+import { routing } from "@/i18n/routing";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://said-hammoudi.vercel.app";
-
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1.0,
+  return routing.locales.map((locale) => ({
+    url: `${SITE_URL}/${locale}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 1,
+    alternates: {
+      languages: Object.fromEntries(routing.locales.map((l) => [l, `${SITE_URL}/${l}`])),
     },
-    {
-      url: `${baseUrl}/card`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-  ];
+  }));
 }

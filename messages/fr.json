@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Said Hammoudi | Ingénieur Cloud & DevOps freelance pour startups et PME",
+    "description": "Ingénieur cloud et plateforme freelance (ex-Decathlon, ADEO). J'aide les startups et PME à construire des fondations GCP, AWS et Azure sécurisées, à automatiser la livraison avec Terraform et le CI/CD, et à exploiter des plateformes fiables.",
+    "ogTitle": "Ingénieur Cloud & DevOps freelance",
+    "ogTagline": "Fondations cloud sécurisées, Terraform et CI/CD pour startups et PME"
+  },
+  "a11y": { "skip": "Aller au contenu", "language": "Langue" },
+  "nav": { "services": "Services", "proof": "Résultats", "experience": "Expérience", "contact": "Contact", "cta": "Me écrire" },
+  "hero": {
+    "eyebrow": "Ingénieur Cloud & Plateforme freelance",
+    "title": "Livrez plus vite sur le cloud, sans les casse-têtes d'infrastructure.",
+    "subtitle": "J'aide les startups et PME à construire des fondations cloud sécurisées, automatiser la livraison et exploiter des plateformes fiables sur GCP, AWS et Azure. Quatre ans au sein des équipes plateforme de Decathlon et ADEO.",
+    "cta": "Me écrire",
+    "cv": "Télécharger mon CV",
+    "availability": "Disponible pour des missions freelance · Remote, Paris, Lille",
+    "photoAlt": "Portrait de Said Hammoudi"
+  },
+  "services": {
+    "title": "Comment je peux vous aider",
+    "subtitle": "Quatre services ciblés, livrés sous forme de code que vous possédez.",
+    "items": [
+      {
+        "title": "Fondations cloud",
+        "text": "Une base sécurisée et bien structurée sur GCP, AWS ou Azure : comptes et projets, réseau, IAM et garde-fous, le tout en Terraform.",
+        "points": ["Conception et mise en place de landing zones", "IAM au moindre privilège et politiques d'organisation", "Modules Terraform réutilisables"]
+      },
+      {
+        "title": "CI/CD et tests d'infrastructure",
+        "text": "Remplacez les vérifications manuelles par des pipelines automatisés pour livrer vite et en sécurité.",
+        "points": ["Pipelines GitHub Actions", "Suites terraform test et pytest", "Analyse des dépendances et du code"]
+      },
+      {
+        "title": "Plateformes internes et APIs",
+        "text": "Des outils en libre-service pour que vos développeurs obtiennent ce dont ils ont besoin sans attendre un ticket.",
+        "points": ["APIs de provisioning Python et FastAPI", "Providers Terraform custom en Go", "Documenté, testé, transmis"]
+      },
+      {
+        "title": "Run et fiabilité",
+        "text": "Exploitation et gestion d'incidents sur des plateformes multi-cloud, en automatisant les tâches récurrentes.",
+        "points": ["Gestion des incidents et astreintes", "Observabilité avec Datadog", "Gestion des secrets avec Vault"]
+      }
+    ]
+  },
+  "proof": {
+    "title": "Des résultats issus de missions réelles",
+    "subtitle": "Chiffres issus de mon travail chez Decathlon et ADEO.",
+    "stats": [
+      { "value": "3 jours → 30 min", "label": "Temps de validation de l'infrastructure, grâce aux tests end-to-end automatisés (Decathlon)" },
+      { "value": "164 / mois", "label": "Tickets traités en autonomie en moyenne sur le run multi-cloud (Decathlon)" },
+      { "value": "4 ans", "label": "D'ingénierie cloud et plateforme dans de grandes équipes (Decathlon, ADEO)" }
+    ],
+    "certsTitle": "Certifications",
+    "certs": [
+      { "name": "Google Cloud Associate Cloud Engineer", "date": "Fév. 2025" },
+      { "name": "HashiCorp Certified: Terraform Associate (003)", "date": "Sept. 2024" },
+      { "name": "AWS Certified Cloud Practitioner", "date": "Nov. 2022" }
+    ]
+  },
+  "experience": {
+    "title": "Expérience",
+    "items": [
+      {
+        "company": "ADEO",
+        "role": "Ingénieur Cloud / Platform Engineer",
+        "period": "Oct. 2025 – Aujourd'hui",
+        "points": [
+          "Conception et tests d'APIs et SDK internes de provisioning (Python, FastAPI) pour une landing zone en libre-service sur GCP et Azure.",
+          "Prise en charge du run et des incidents de production ; correction des alertes de sécurité GitHub (Dependabot, Code Scanning)."
+        ]
+      },
+      {
+        "company": "Decathlon",
+        "role": "Ingénieur Cloud & Platform Foundation",
+        "period": "Oct. 2022 – Oct. 2025",
+        "points": [
+          "Développement d'un provider Terraform custom en Go pour industrialiser les ressources réseau.",
+          "Validation de l'infrastructure ramenée de 3 jours à 30 minutes avec terraform test et pytest.",
+          "Run de landing zones multi-cloud sur GCP et AWS, avec en moyenne 164 tickets par mois."
+        ]
+      },
+      {
+        "company": "EDF",
+        "role": "Concepteur Développeur (stage)",
+        "period": "Mars – Sept. 2022",
+        "points": ["Développement et maintenance de trois applications pour les flux de données comptables, de trésorerie et de trading."]
+      },
+      {
+        "company": "EquensWorldline",
+        "role": "DevOps Junior (stage)",
+        "period": "Mai – Août 2020",
+        "points": ["Conteneurisation d'une application de paiement avec Docker et amélioration de ses pipelines CI/CD."]
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment nous travaillons ensemble",
+    "steps": [
+      { "title": "Échange", "text": "Vous décrivez le problème par email. Nous convenons du périmètre, des objectifs et du calendrier." },
+      { "title": "Plan", "text": "J'examine votre existant et je propose un plan court et priorisé." },
+      { "title": "Livraison", "text": "Des incréments dans vos dépôts, avec documentation et transfert de compétences." }
+    ]
+  },
+  "contact": {
+    "title": "Parlons de votre projet cloud",
+    "text": "Décrivez votre projet en quelques lignes et je reviens vers vous.",
+    "cta": "Me écrire",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": { "rights": "Tous droits réservés." }
+}
