@@ -1,32 +1,32 @@
 {
   "meta": {
     "title": "Said Hammoudi | Freelance Cloud Ops & Platform Engineer",
-    "description": "Freelance Cloud Ops and Platform Engineer (ex-Decathlon, ADEO) for long-term missions. I run and evolve multi-cloud platforms on GCP, AWS and Azure with Terraform, automation and on-call ownership.",
+    "description": "Freelance Cloud Ops and Platform Engineer with 4 years of experience on GCP and AWS landing zones (Decathlon, ADEO). Terraform, Python, automation and run ownership for long-term missions.",
     "ogTitle": "Cloud Ops & Platform Engineer",
-    "ogTagline": "Freelance, for long-term missions on GCP, AWS and Azure"
+    "ogTagline": "Freelance · GCP and AWS landing zones, Terraform, Python"
   },
   "a11y": { "skip": "Skip to content", "language": "Language" },
   "nav": { "services": "Expertise", "proof": "Results", "experience": "Experience", "contact": "Contact", "cta": "Get in touch" },
   "hero": {
-    "badge": "Freelance · Open to long-term contracts",
+    "badge": "Freelance · Currently on mission at Decathlon",
     "title": "Cloud Ops and Platform Engineering, for the long run.",
-    "subtitle": "I join your platform team for months, not days. I operate and evolve multi-cloud platforms on GCP, AWS and Azure, with infrastructure as code, automation and real ownership of run and on-call.",
+    "subtitle": "Freelance Cloud Ops engineer with four years on GCP and AWS. I operate and evolve multi-cloud landing zones with Terraform and Python, from daily run and incident response to platform tooling and automation.",
     "cta": "Get in touch",
     "cv": "Download CV",
-    "availability": "Remote, Paris and Lille · Missions of 6 months and more",
+    "availability": "Not available right now · Open to discussing future long-term missions · Remote, Paris, Lille",
     "photoAlt": "Portrait of Said Hammoudi"
   },
   "services": {
     "title": "What I take on",
-    "subtitle": "The scope of a typical long-term mission.",
+    "subtitle": "The scope of a typical long-term mission on a cloud platform team.",
     "items": [
       {
         "title": "Cloud operations",
-        "text": "Day-to-day ownership of multi-cloud environments: incident handling, L3 support and on-call, change management and continuous improvement of the run."
+        "text": "Day-to-day ownership of multi-cloud environments: incident handling and root-cause analysis, L3 support and on-call, and continuous improvement of the run."
       },
       {
-        "title": "Platform engineering",
-        "text": "Landing zones, networking, IAM and guardrails on GCP, AWS and Azure, built as reusable Terraform modules that product teams can adopt."
+        "title": "Landing zones and governance",
+        "text": "Cloud organisation, networking, IAM and guardrails on GCP and AWS, built as reusable Terraform modules that product teams can adopt on their own."
       },
       {
         "title": "Automation and delivery",
@@ -34,7 +34,15 @@
       },
       {
         "title": "Internal tooling and APIs",
-        "text": "Self-service provisioning APIs in Python and FastAPI, and custom Terraform providers in Go, to remove tickets and manual steps."
+        "text": "Python and FastAPI provisioning APIs, serverless workloads on Cloud Run and custom Terraform providers in Go, to remove tickets and manual steps."
+      },
+      {
+        "title": "Security and observability",
+        "text": "Dependency and code scanning, secrets management with Vault, and monitoring with Datadog to keep a platform secure and observable."
+      },
+      {
+        "title": "AI-assisted engineering",
+        "text": "I use AI assistants to speed up infrastructure code, APIs and tests, always with human review and automated tests before anything ships."
       }
     ]
   },
@@ -42,7 +50,8 @@
     "title": "Track record",
     "subtitle": "Figures from my missions at Decathlon and ADEO.",
     "stats": [
-      { "value": "3 years", "label": "Continuous ownership of the same multi-cloud landing zone platform (Decathlon)" },
+      { "value": "4 years", "label": "Cloud and platform engineering on GCP and AWS in large enterprise teams" },
+      { "value": "2 missions", "label": "In Decathlon's Cloud Foundation team, on the same GCP and AWS landing zone platform" },
       { "value": "164 / month", "label": "Average tickets handled autonomously in run and support (Decathlon)" },
       { "value": "3 days → 30 min", "label": "Infrastructure validation time, with automated end-to-end tests (Decathlon)" }
     ],
@@ -57,12 +66,22 @@
     "title": "Experience",
     "items": [
       {
+        "company": "Decathlon",
+        "role": "Cloud Ops Engineer (freelance)",
+        "period": "Present",
+        "points": [
+          "Back in the Cloud Foundation team, operating the GCP and AWS landing zones used by product teams.",
+          "Run, incident handling and root-cause analysis on a multi-cloud platform.",
+          "Evolving Terraform infrastructure and Python tooling, using AI assistants to speed up delivery with review and tests."
+        ]
+      },
+      {
         "company": "ADEO",
         "role": "Cloud / Platform Engineer",
-        "period": "Oct 2025 – Present",
+        "period": "Oct 2025 – 2026",
         "points": [
-          "Building and testing internal provisioning APIs and SDKs (Python, FastAPI) for a self-service landing zone on GCP and Azure.",
-          "Owning run and production incidents; fixing GitHub security alerts (Dependabot, Code Scanning)."
+          "Built and tested internal provisioning APIs and SDKs (Python, FastAPI) for a self-service landing zone on GCP and Azure.",
+          "Owned run and production incidents; fixed GitHub security alerts (Dependabot, Code Scanning)."
         ]
       },
       {
@@ -72,7 +91,8 @@
         "points": [
           "Ran multi-cloud landing zones on GCP and AWS: run, support and L3 on-call, averaging 164 tickets a month.",
           "Built a custom Terraform provider in Go to industrialise network resources.",
-          "Cut infrastructure validation from 3 days to 30 minutes with terraform test and pytest."
+          "Cut infrastructure validation from 3 days to 30 minutes with terraform test and pytest.",
+          "Migrated Cloud Functions to FastAPI and deployed multi-region on Cloud Run, writing ADRs and coordinating across teams."
         ]
       },
       {
@@ -92,10 +112,10 @@
   "skills": {
     "title": "Toolbox",
     "groups": [
-      { "title": "Cloud", "items": ["Google Cloud", "AWS", "Azure", "Landing zones", "IAM", "Networking"] },
+      { "title": "Cloud", "items": ["Google Cloud", "AWS", "Azure", "Landing zones", "IAM", "Networking", "Cloud Run", "Cloud Functions"] },
       { "title": "Infrastructure as code", "items": ["Terraform", "Terragrunt", "terraform test", "Docker", "Linux"] },
-      { "title": "Automation and code", "items": ["Python", "FastAPI", "Go", "Bash", "GitHub Actions", "pytest"] },
-      { "title": "Run and security", "items": ["Datadog", "HashiCorp Vault", "Dependabot", "Code Scanning", "Jira", "ServiceNow"] }
+      { "title": "Automation and code", "items": ["Python", "FastAPI", "Go", "Bash", "GitHub Actions", "pytest", "AI-assisted development"] },
+      { "title": "Run, security and cost", "items": ["Datadog", "HashiCorp Vault", "Dependabot", "Code Scanning", "FinOps", "Jira", "ServiceNow"] }
     ]
   },
   "engagement": {
@@ -108,8 +128,8 @@
     ]
   },
   "contact": {
-    "title": "Looking for a Cloud Ops or Platform engineer?",
-    "text": "Send me a few lines about your platform, the scope and the timeline, and I will reply with my availability.",
+    "title": "Planning a Cloud Ops or Platform mission?",
+    "text": "I am on a mission right now and not available. Tell me about your platform, the scope and the timeline, and I will let you know when I can start.",
     "cta": "Get in touch"
   },
   "footer": { "rights": "All rights reserved." }

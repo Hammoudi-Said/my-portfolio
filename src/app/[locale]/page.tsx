@@ -68,7 +68,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
         <Section id="services" tone="surface">
           <h2 className={h2}>{t("services.title")}</h2>
           <p className="mt-3 max-w-2xl text-muted">{t("services.subtitle")}</p>
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {(t.raw("services.items") as Service[]).map((s) => (
               <article key={s.title} className="rounded-2xl border border-line bg-white p-8">
                 <h3 className="text-xl font-medium text-ink">{s.title}</h3>
@@ -81,10 +81,10 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
         <Section id="proof">
           <h2 className={h2}>{t("proof.title")}</h2>
           <p className="mt-3 text-muted">{t("proof.subtitle")}</p>
-          <dl className="mt-12 grid gap-10 md:grid-cols-3">
+          <dl className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {(t.raw("proof.stats") as Stat[]).map((s) => (
               <div key={s.value}>
-                <dt className="text-4xl font-normal text-brand sm:text-5xl">{s.value}</dt>
+                <dt className="text-3xl font-normal text-brand sm:text-4xl">{s.value}</dt>
                 <dd className="mt-3 leading-relaxed text-muted">{s.label}</dd>
               </div>
             ))}
@@ -103,7 +103,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
           <h2 className={h2}>{t("experience.title")}</h2>
           <ol className="mt-12 divide-y divide-line border-y border-line">
             {(t.raw("experience.items") as Job[]).map((j) => (
-              <li key={j.company} className="grid gap-4 py-8 md:grid-cols-[200px_1fr]">
+              <li key={`${j.company}-${j.period}`} className="grid gap-4 py-8 md:grid-cols-[200px_1fr]">
                 <div>
                   <h3 className="text-lg font-medium text-ink">{j.company}</h3>
                   <p className="text-sm text-muted">{j.period}</p>

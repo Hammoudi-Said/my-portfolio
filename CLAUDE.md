@@ -16,7 +16,7 @@ Freelance cloud/DevOps portfolio for Said Hammoudi, targeting startups/SMEs. Goa
 - Pages are statically generated; call `setRequestLocale(locale)` in layouts/pages. Components are server components, there is no client JS beyond Next's runtime.
 - Security headers (CSP, HSTS, etc.) are in `next.config.ts`. The CSP allows only `'self'`: adding any third-party script, font, image host or analytics means updating it.
 - JSON-LD in `[locale]/layout.tsx` escapes `<`; keep that when changing it. Do not add `Review` schema without real, verifiable testimonials.
-- Design is a light, Google-style theme (Roboto, tokens `ink`, `muted`, `line`, `surface`, `brand` in `tailwind.config.ts`). Positioning is long-term Cloud Ops / Platform Engineer missions.
+- Design is a light, Google-style theme (Roboto, tokens `ink`, `muted`, `line`, `surface`, `brand` in `tailwind.config.ts`). Positioning: freelance Cloud Ops / Platform Engineer for long-term missions, currently on mission at Decathlon (Cloud Foundation, GCP/AWS landing zones) and not available; avoid the words junior/senior.
 - Never add unverifiable numbers or testimonials: the old site had invented ones (99.99% SLA, -85% alerts, fake quotes) that were removed on purpose.
 - The contact email in `src/lib/site.ts` is `hammoudi.pro6@gmail.com`; the phone number is deliberately not published.
 - Fonts load from Google at build time, so builds need network access.
