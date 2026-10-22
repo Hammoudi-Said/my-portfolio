@@ -10,7 +10,9 @@ import { SITE } from "@/lib/site";
 
 interface Service { title: string; text: string }
 interface Stat { value: string; label: string }
-interface Cert { name: string; date: string }
+interface Cert { name: string; issuer: string; date: string; scope: string }
+interface CaseStudy { title: string; context: string; text: string; result: string }
+interface Education { degree: string; school: string; period: string; text: string }
 interface Job { company: string; role: string; period: string; points: string[] }
 interface SkillGroup { title: string; items: string[] }
 interface Term { title: string; text: string }
@@ -50,8 +52,12 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
             <h1 className="mt-6 text-4xl font-normal leading-tight text-ink sm:text-6xl">{t("hero.title")}</h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{t("hero.subtitle")}</p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <a href={mail} className={primary}>{t("hero.cta")}</a>
-              <a href={SITE.cv} className={secondary}>{t("hero.cv")}</a>
+              <a href="#experience" className={primary}>{t("hero.experience")}</a>
+              <a href={mail} className={secondary}>{t("hero.cta")}</a>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3 text-sm text-brand">
+              <a href="#certifications" className="underline underline-offset-4 hover:text-brand-dark">{t("hero.certifications")}</a>
+              <a href={SITE.cv} className="underline underline-offset-4 hover:text-brand-dark">{t("hero.cv")}</a>
             </div>
             <p className="mt-6 text-sm text-muted">{t("hero.availability")}</p>
           </div>
@@ -64,40 +70,6 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
             className="h-40 w-40 rounded-full object-cover md:h-60 md:w-60"
           />
         </section>
-
-        <Section id="services" tone="surface">
-          <h2 className={h2}>{t("services.title")}</h2>
-          <p className="mt-3 max-w-2xl text-muted">{t("services.subtitle")}</p>
-          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {(t.raw("services.items") as Service[]).map((s) => (
-              <article key={s.title} className="rounded-2xl border border-line bg-white p-8">
-                <h3 className="text-xl font-medium text-ink">{s.title}</h3>
-                <p className="mt-3 leading-relaxed text-muted">{s.text}</p>
-              </article>
-            ))}
-          </div>
-        </Section>
-
-        <Section id="proof">
-          <h2 className={h2}>{t("proof.title")}</h2>
-          <p className="mt-3 text-muted">{t("proof.subtitle")}</p>
-          <dl className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {(t.raw("proof.stats") as Stat[]).map((s) => (
-              <div key={s.value}>
-                <dt className="text-3xl font-normal text-brand sm:text-4xl">{s.value}</dt>
-                <dd className="mt-3 leading-relaxed text-muted">{s.label}</dd>
-              </div>
-            ))}
-          </dl>
-          <h3 className="mt-16 text-xl font-medium text-ink">{t("proof.certsTitle")}</h3>
-          <ul className="mt-5 flex flex-wrap gap-3">
-            {(t.raw("proof.certs") as Cert[]).map((c) => (
-              <li key={c.name} className="rounded-full border border-line px-5 py-2 text-sm text-ink">
-                {c.name} <span className="text-muted">· {c.date}</span>
-              </li>
-            ))}
-          </ul>
-        </Section>
 
         <Section id="experience" tone="surface">
           <h2 className={h2}>{t("experience.title")}</h2>
@@ -119,7 +91,58 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
           </ol>
         </Section>
 
-        <Section id="skills">
+        <Section id="certifications">
+          <h2 className={h2}>{t("certifications.title")}</h2>
+          <p className="mt-3 max-w-2xl text-muted">{t("certifications.subtitle")}</p>
+          <ul className="mt-12 grid gap-4 md:grid-cols-3">
+            {(t.raw("certifications.items") as Cert[]).map((c) => (
+              <li key={c.name} className="rounded-2xl border border-line bg-white p-8">
+                <p className="text-sm font-medium text-brand-dark">{c.issuer}</p>
+                <h3 className="mt-3 text-xl font-medium text-ink">{c.name}</h3>
+                <p className="mt-3 leading-relaxed text-muted">{c.scope}</p>
+                <p className="mt-5 text-sm text-muted">{t("certifications.obtained")} {c.date}</p>
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        <Section id="proof" tone="surface">
+          <h2 className={h2}>{t("proof.title")}</h2>
+          <p className="mt-3 text-muted">{t("proof.subtitle")}</p>
+          <dl className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {(t.raw("proof.stats") as Stat[]).map((s) => (
+              <div key={s.value}>
+                <dt className="text-3xl font-normal text-brand sm:text-4xl">{s.value}</dt>
+                <dd className="mt-3 leading-relaxed text-muted">{s.label}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-16 grid gap-4 md:grid-cols-3">
+            {(t.raw("proof.cases") as CaseStudy[]).map((c) => (
+              <article key={c.title} className="rounded-2xl border border-line bg-white p-8">
+                <p className="text-sm text-muted">{c.context}</p>
+                <h3 className="mt-3 text-xl font-medium text-ink">{c.title}</h3>
+                <p className="mt-3 leading-relaxed text-muted">{c.text}</p>
+                <p className="mt-5 border-t border-line pt-4 leading-relaxed text-brand-dark">{c.result}</p>
+              </article>
+            ))}
+          </div>
+        </Section>
+
+        <Section id="services">
+          <h2 className={h2}>{t("services.title")}</h2>
+          <p className="mt-3 max-w-2xl text-muted">{t("services.subtitle")}</p>
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {(t.raw("services.items") as Service[]).map((s) => (
+              <article key={s.title} className="rounded-2xl border border-line bg-white p-8">
+                <h3 className="text-xl font-medium text-ink">{s.title}</h3>
+                <p className="mt-3 leading-relaxed text-muted">{s.text}</p>
+              </article>
+            ))}
+          </div>
+        </Section>
+
+        <Section id="skills" tone="surface">
           <h2 className={h2}>{t("skills.title")}</h2>
           <div className="mt-12 grid gap-10 md:grid-cols-2">
             {(t.raw("skills.groups") as SkillGroup[]).map((g) => (
@@ -131,6 +154,19 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
                   ))}
                 </ul>
               </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section id="education">
+          <h2 className={h2}>{t("education.title")}</h2>
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {(t.raw("education.items") as Education[]).map((e) => (
+              <article key={e.degree} className="rounded-2xl border border-line bg-white p-8">
+                <p className="text-sm text-muted">{e.school} · {e.period}</p>
+                <h3 className="mt-3 text-xl font-medium text-ink">{e.degree}</h3>
+                <p className="mt-3 leading-relaxed text-muted">{e.text}</p>
+              </article>
             ))}
           </div>
         </Section>

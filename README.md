@@ -15,6 +15,14 @@ npm run build   # also type-checks; needs network for Google Fonts
 
 Copy lives in `messages/en.json` and `messages/fr.json`. Site constants (URL, email, links) are in `src/lib/site.ts`; set `NEXT_PUBLIC_SITE_URL` to override the production URL.
 
+## Content
+
+The page puts experience and certifications before case studies, expertise, tools, education and contact. Both languages use the same Google-style design and section structure.
+
+The current freelance mission at Decathlon started in May 2026, within CPE's Cloud Foundation team (GCP/AWS landing zones and ongoing work on AI agents for support and technology monitoring). ADEO is marked as completed without an unconfirmed end date. Historical operational metrics belong to the 2022–2025 Decathlon mission.
+
+The downloadable PDF is a previous CV version and does not include the current mission. Replace `public/cv-said-hammoudi.pdf` when the updated CV is ready. Certification award dates come from the CV; validity dates and verification links have not been supplied.
+
 ## Security
 
 Security headers (CSP, HSTS, frame and referrer policies) are set in `next.config.ts`. The site has no API routes, forms or storage. Dependabot and CI (`npm audit`, lint, build) run on GitHub.
