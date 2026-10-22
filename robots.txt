@@ -1,0 +1,7 @@
+# Robots.txt for Said HAMMOUDI Portfolio
+# Allow all search engines to index the site
+
+User-agent: *
+Allow: /
+
+Sitemap: https://Hammoudi-Said.github.io/sitemap.xml
