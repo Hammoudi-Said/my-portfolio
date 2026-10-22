@@ -26,3 +26,7 @@ The downloadable PDF is a previous CV version and does not include the current m
 ## Security
 
 Security headers (CSP, HSTS, frame and referrer policies) are set in `next.config.ts`. The site has no API routes, forms or storage. Dependabot and CI (`npm audit`, lint, build) run on GitHub.
+
+## Previous static site
+
+The existing HTML site, assets, documentation and MIT license from the remote repository are preserved. Next.js serves the portfolio from `src/app/`; the root HTML files are the previous static version.
