@@ -31,6 +31,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  experimental: {
+    agentUpgrade: "security",
+  },
   poweredByHeader: false,
   reactStrictMode: true,
   async headers() {
