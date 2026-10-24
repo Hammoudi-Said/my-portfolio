@@ -68,7 +68,7 @@ export default async function LocaleLayout({
         url: `${SITE_URL}/${locale}`,
         email: SITE.email,
         sameAs: [SITE.linkedin, SITE.github],
-        knowsAbout: ["Google Cloud Platform", "Amazon Web Services", "Microsoft Azure", "Terraform", "CI/CD", "Platform Engineering", "Python", "Go", "Cloud Operations", "AI agents"],
+        knowsAbout: ["Google Cloud Platform", "Amazon Web Services", "Microsoft Azure", "Terraform", "CI/CD", "Platform Engineering", "Python", "Go"],
       },
       {
         "@type": "ProfessionalService",
