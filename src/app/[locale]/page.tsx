@@ -10,7 +10,7 @@ import { SITE } from "@/lib/site";
 
 interface Service { title: string; text: string }
 interface Stat { value: string; label: string }
-interface Cert { name: string; issuer: string; date: string; scope: string }
+interface Cert { name: string; issuer: string; date: string; scope: string; url: string; image: string }
 interface CaseStudy { title: string; context: string; text: string; result: string }
 interface Education { degree: string; school: string; period: string; text: string }
 interface Job { company: string; role: string; period: string; points: string[] }
@@ -97,10 +97,12 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
           <ul className="mt-12 grid gap-4 md:grid-cols-3">
             {(t.raw("certifications.items") as Cert[]).map((c) => (
               <li key={c.name} className="rounded-2xl border border-line bg-white p-8">
+                <Image src={c.image} alt={c.name} width={96} height={96} className="mb-5 h-24 w-24 object-contain" />
                 <p className="text-sm font-medium text-brand-dark">{c.issuer}</p>
                 <h3 className="mt-3 text-xl font-medium text-ink">{c.name}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{c.scope}</p>
                 <p className="mt-5 text-sm text-muted">{t("certifications.obtained")} {c.date}</p>
+                <a href={c.url} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-sm font-medium text-brand-dark underline underline-offset-4">{t("certifications.verify")}</a>
               </li>
             ))}
           </ul>
