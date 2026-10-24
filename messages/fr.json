@@ -196,9 +196,9 @@
     "verify": "Vérifier sur Credly",
     "obtained": "Obtenue en",
     "items": [
-      { "name": "Google Cloud Associate Cloud Engineer", "url": "https://www.credly.com/badges/de5e0c68-1cd9-40b3-8dd9-49581cbb8917/public_url", "date": "Fév. 2025", "issuer": "Google Cloud", "scope": "Exploitation et administration d’environnements Google Cloud." },
-      { "name": "HashiCorp Certified: Terraform Associate (003)", "url": "https://www.credly.com/badges/197e9731-16db-4e63-80e9-e2e10b0fda34/public_url", "date": "Sept. 2024", "issuer": "HashiCorp", "scope": "Infrastructure as Code et gestion du cycle de vie des ressources Terraform." },
-      { "name": "AWS Certified Cloud Practitioner", "url": "https://www.credly.com/badges/e20fa7d1-d331-4b40-a4e0-b00a55bd1207/public_url", "date": "Nov. 2022", "issuer": "Amazon Web Services", "scope": "Fondamentaux des services AWS et de la sécurité cloud." }
+      { "name": "Google Cloud Associate Cloud Engineer", "image": "/badges/gcp-ace.png", "url": "https://www.credly.com/badges/de5e0c68-1cd9-40b3-8dd9-49581cbb8917/public_url", "date": "Fév. 2025", "issuer": "Google Cloud", "scope": "Exploitation et administration d’environnements Google Cloud." },
+      { "name": "HashiCorp Certified: Terraform Associate (003)", "image": "/badges/terraform-associate.png", "url": "https://www.credly.com/badges/197e9731-16db-4e63-80e9-e2e10b0fda34/public_url", "date": "Sept. 2024", "issuer": "HashiCorp", "scope": "Infrastructure as Code et gestion du cycle de vie des ressources Terraform." },
+      { "name": "AWS Certified Cloud Practitioner", "image": "/badges/aws-ccp.png", "url": "https://www.credly.com/badges/e20fa7d1-d331-4b40-a4e0-b00a55bd1207/public_url", "date": "Nov. 2022", "issuer": "Amazon Web Services", "scope": "Fondamentaux des services AWS et de la sécurité cloud." }
     ]
   },
   "education": {
