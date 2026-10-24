@@ -1,0 +1,14 @@
+[tools]
+node = "24"
+
+[tasks.dev]
+description = "Run Next.js dev server with Turbopack"
+run = "npm run dev"
+
+[tasks.build]
+description = "Build production Next.js application"
+run = "npm run build"
+
+[tasks.lint]
+description = "Run ESLint"
+run = "npm run lint"

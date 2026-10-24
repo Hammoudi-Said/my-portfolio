@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Said Hammoudi | Freelance Cloud Ops & Platform Engineer",
+    "description": "Freelance Cloud Ops and Platform Engineer with 4 years of experience on GCP and AWS landing zones (Decathlon, ADEO). Terraform, Python, automation and run ownership for long-term missions.",
+    "ogTitle": "Cloud Ops & Platform Engineer",
+    "ogTagline": "Freelance · GCP and AWS landing zones, Terraform, Python"
+  },
+  "a11y": { "skip": "Skip to content", "language": "Language" },
+  "nav": { "services": "Expertise", "proof": "Results", "experience": "Experience", "contact": "Contact", "cta": "Get in touch" },
+  "hero": {
+    "badge": "Freelance · Currently on mission at Decathlon",
+    "title": "Cloud Ops and Platform Engineering, for the long run.",
+    "subtitle": "Freelance Cloud Ops engineer with four years on GCP and AWS. I operate and evolve multi-cloud landing zones with Terraform and Python, from daily run and incident response to platform tooling and automation.",
+    "cta": "Get in touch",
+    "cv": "Download CV",
+    "availability": "Not available right now · Open to discussing future long-term missions · Remote, Paris, Lille",
+    "photoAlt": "Portrait of Said Hammoudi"
+  },
+  "services": {
+    "title": "What I take on",
+    "subtitle": "The scope of a typical long-term mission on a cloud platform team.",
+    "items": [
+      {
+        "title": "Cloud operations",
+        "text": "Day-to-day ownership of multi-cloud environments: incident handling and root-cause analysis, L3 support and on-call, and continuous improvement of the run."
+      },
+      {
+        "title": "Landing zones and governance",
+        "text": "Cloud organisation, networking, IAM and guardrails on GCP and AWS, built as reusable Terraform modules that product teams can adopt on their own."
+      },
+      {
+        "title": "Automation and delivery",
+        "text": "CI/CD with GitHub Actions and automated infrastructure testing with terraform test and pytest, so changes ship safely and quickly."
+      },
+      {
+        "title": "Internal tooling and APIs",
+        "text": "Python and FastAPI provisioning APIs, serverless workloads on Cloud Run and custom Terraform providers in Go, to remove tickets and manual steps."
+      },
+      {
+        "title": "Security and observability",
+        "text": "Dependency and code scanning, secrets management with Vault, and monitoring with Datadog to keep a platform secure and observable."
+      },
+      {
+        "title": "AI-assisted engineering",
+        "text": "I use AI assistants to speed up infrastructure code, APIs and tests, always with human review and automated tests before anything ships."
+      }
+    ]
+  },
+  "proof": {
+    "title": "Track record",
+    "subtitle": "Figures from my missions at Decathlon and ADEO.",
+    "stats": [
+      { "value": "4 years", "label": "Cloud and platform engineering on GCP and AWS in large enterprise teams" },
+      { "value": "2 missions", "label": "In Decathlon's Cloud Foundation team, on the same GCP and AWS landing zone platform" },
+      { "value": "164 / month", "label": "Average tickets handled autonomously in run and support (Decathlon)" },
+      { "value": "3 days → 30 min", "label": "Infrastructure validation time, with automated end-to-end tests (Decathlon)" }
+    ],
+    "certsTitle": "Certifications",
+    "certs": [
+      { "name": "Google Cloud Associate Cloud Engineer", "date": "Feb 2025" },
+      { "name": "HashiCorp Certified: Terraform Associate (003)", "date": "Sep 2024" },
+      { "name": "AWS Certified Cloud Practitioner", "date": "Nov 2022" }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "items": [
+      {
+        "company": "Decathlon",
+        "role": "Cloud Ops Engineer (freelance)",
+        "period": "Present",
+        "points": [
+          "Back in the Cloud Foundation team, operating the GCP and AWS landing zones used by product teams.",
+          "Run, incident handling and root-cause analysis on a multi-cloud platform.",
+          "Evolving Terraform infrastructure and Python tooling, using AI assistants to speed up delivery with review and tests."
+        ]
+      },
+      {
+        "company": "ADEO",
+        "role": "Cloud / Platform Engineer",
+        "period": "Oct 2025 – 2026",
+        "points": [
+          "Built and tested internal provisioning APIs and SDKs (Python, FastAPI) for a self-service landing zone on GCP and Azure.",
+          "Owned run and production incidents; fixed GitHub security alerts (Dependabot, Code Scanning)."
+        ]
+      },
+      {
+        "company": "Decathlon",
+        "role": "Cloud & Platform Foundation Engineer",
+        "period": "Oct 2022 – Oct 2025",
+        "points": [
+          "Ran multi-cloud landing zones on GCP and AWS: run, support and L3 on-call, averaging 164 tickets a month.",
+          "Built a custom Terraform provider in Go to industrialise network resources.",
+          "Cut infrastructure validation from 3 days to 30 minutes with terraform test and pytest.",
+          "Migrated Cloud Functions to FastAPI and deployed multi-region on Cloud Run, writing ADRs and coordinating across teams."
+        ]
+      },
+      {
+        "company": "EDF",
+        "role": "Software Developer (internship)",
+        "period": "Mar – Sep 2022",
+        "points": ["Developed and maintained three applications for accounting, treasury and trading data flows."]
+      },
+      {
+        "company": "EquensWorldline",
+        "role": "Junior DevOps (internship)",
+        "period": "May – Aug 2020",
+        "points": ["Containerised a payment application with Docker and improved its CI/CD pipelines."]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Toolbox",
+    "groups": [
+      { "title": "Cloud", "items": ["Google Cloud", "AWS", "Azure", "Landing zones", "IAM", "Networking", "Cloud Run", "Cloud Functions"] },
+      { "title": "Infrastructure as code", "items": ["Terraform", "Terragrunt", "terraform test", "Docker", "Linux"] },
+      { "title": "Automation and code", "items": ["Python", "FastAPI", "Go", "Bash", "GitHub Actions", "pytest", "AI-assisted development"] },
+      { "title": "Run, security and cost", "items": ["Datadog", "HashiCorp Vault", "Dependabot", "Code Scanning", "FinOps", "Jira", "ServiceNow"] }
+    ]
+  },
+  "engagement": {
+    "title": "How I work",
+    "subtitle": "Built for long-term contracts, as an extension of your team.",
+    "terms": [
+      { "title": "Embedded in your team", "text": "I follow your rituals, tools and standards, and take ownership of a clear scope from week one." },
+      { "title": "Documented and reversible", "text": "Everything lives in your repositories, with runbooks and ADRs, so knowledge stays with the team." },
+      { "title": "Flexible location", "text": "Remote-first, with on-site days in Paris or Lille when it helps. Contracts through my freelance company." }
+    ]
+  },
+  "contact": {
+    "title": "Planning a Cloud Ops or Platform mission?",
+    "text": "I am on a mission right now and not available. Tell me about your platform, the scope and the timeline, and I will let you know when I can start.",
+    "cta": "Get in touch"
+  },
+  "footer": { "rights": "All rights reserved." }
+}
