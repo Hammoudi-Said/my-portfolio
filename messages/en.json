@@ -1,65 +1,73 @@
 {
   "meta": {
     "title": "Said Hammoudi | Freelance Cloud Ops & Platform Engineer",
-    "description": "Freelance Cloud Ops and Platform Engineer with 4 years of experience on GCP and AWS landing zones (Decathlon, ADEO). Terraform, Python, automation and run ownership for long-term missions.",
+    "description": "Freelance Cloud Ops & Platform Engineer at Decathlon since May 2026: GCP/AWS landing zones, Terraform, Python and ongoing work on AI agents for support and technology monitoring.",
     "ogTitle": "Cloud Ops & Platform Engineer",
-    "ogTagline": "Freelance · GCP and AWS landing zones, Terraform, Python"
+    "ogTagline": "Freelance · GCP / AWS · Terraform · Python · AI agents"
   },
-  "a11y": { "skip": "Skip to content", "language": "Language" },
-  "nav": { "services": "Expertise", "proof": "Results", "experience": "Experience", "contact": "Contact", "cta": "Get in touch" },
-  "hero": {
-    "badge": "Freelance · Currently on mission at Decathlon",
-    "title": "Cloud Ops and Platform Engineering, for the long run.",
-    "subtitle": "Freelance Cloud Ops engineer with four years on GCP and AWS. I operate and evolve multi-cloud landing zones with Terraform and Python, from daily run and incident response to platform tooling and automation.",
+  "a11y": {
+    "skip": "Skip to content",
+    "language": "Language"
+  },
+  "nav": {
+    "services": "Expertise",
+    "proof": "Track record",
+    "experience": "Experience",
+    "contact": "Contact",
     "cta": "Get in touch",
-    "cv": "Download CV",
+    "certifications": "Certifications"
+  },
+  "hero": {
+    "badge": "Freelance · At Decathlon since May 2026",
+    "title": "Said Hammoudi, Cloud Ops & Platform Engineer.",
+    "subtitle": "Freelance cloud engineer operating and evolving GCP and AWS landing zones. Since May 2026, I have been working with Decathlon’s Cloud Foundation team within CPE, including agentic AI work for support and technology monitoring. My background combines production operations, Terraform providers in Go and Python/FastAPI APIs.",
+    "cta": "Get in touch",
+    "cv": "CV PDF (previous version)",
     "availability": "Not available right now · Open to discussing future long-term missions · Remote, Paris, Lille",
-    "photoAlt": "Portrait of Said Hammoudi"
+    "photoAlt": "Portrait of Said Hammoudi",
+    "experience": "Explore my experience",
+    "certifications": "GCP · Terraform · AWS: my certifications"
   },
   "services": {
     "title": "What I take on",
     "subtitle": "The scope of a typical long-term mission on a cloud platform team.",
     "items": [
-      {
-        "title": "Cloud operations",
-        "text": "Day-to-day ownership of multi-cloud environments: incident handling and root-cause analysis, L3 support and on-call, and continuous improvement of the run."
-      },
-      {
-        "title": "Landing zones and governance",
-        "text": "Cloud organisation, networking, IAM and guardrails on GCP and AWS, built as reusable Terraform modules that product teams can adopt on their own."
-      },
-      {
-        "title": "Automation and delivery",
-        "text": "CI/CD with GitHub Actions and automated infrastructure testing with terraform test and pytest, so changes ship safely and quickly."
-      },
-      {
-        "title": "Internal tooling and APIs",
-        "text": "Python and FastAPI provisioning APIs, serverless workloads on Cloud Run and custom Terraform providers in Go, to remove tickets and manual steps."
-      },
-      {
-        "title": "Security and observability",
-        "text": "Dependency and code scanning, secrets management with Vault, and monitoring with Datadog to keep a platform secure and observable."
-      },
-      {
-        "title": "AI-assisted engineering",
-        "text": "I use AI assistants to speed up infrastructure code, APIs and tests, always with human review and automated tests before anything ships."
-      }
+      { "title": "Cloud operations", "text": "Day-to-day ownership of multi-cloud environments: incident handling and root-cause analysis, L3 support and on-call, and continuous improvement of the run." },
+      { "title": "Landing zones and governance", "text": "Cloud organisation, networking, IAM and guardrails on GCP and AWS, built as reusable Terraform modules that product teams can adopt on their own." },
+      { "title": "Automation and delivery", "text": "CI/CD with GitHub Actions and automated infrastructure testing with terraform test and pytest, so changes ship safely and quickly." },
+      { "title": "Internal tooling and APIs", "text": "Python and FastAPI provisioning APIs, serverless workloads on Cloud Run and custom Terraform providers in Go, to remove tickets and manual steps." },
+      { "title": "Security and observability", "text": "Dependency and code scanning, secrets management with Vault, and monitoring with Datadog to keep a platform secure and observable." },
+      { "title": "AI agents for Cloud Ops", "text": "Ongoing work at Decathlon: creating AI agents for support and technology monitoring within the Cloud Foundation team." }
     ]
   },
   "proof": {
-    "title": "Track record",
-    "subtitle": "Figures from my missions at Decathlon and ADEO.",
+    "title": "Contributions and results",
+    "subtitle": "Practical contributions, from cloud operations to platform tooling.",
     "stats": [
-      { "value": "4 years", "label": "Cloud and platform engineering on GCP and AWS in large enterprise teams" },
-      { "value": "2 missions", "label": "In Decathlon's Cloud Foundation team, on the same GCP and AWS landing zone platform" },
-      { "value": "164 / month", "label": "Average tickets handled autonomously in run and support (Decathlon)" },
-      { "value": "3 days → 30 min", "label": "Infrastructure validation time, with automated end-to-end tests (Decathlon)" }
+      { "value": "4 years", "label": "In cloud and platform engineering since October 2022, at Decathlon and ADEO" },
+      { "value": "2 missions", "label": "At Decathlon: an initial mission from 2022 to 2025, followed by a return as a freelancer in May 2026" },
+      { "value": "164 / month", "label": "Average tickets handled autonomously in operations and support at Decathlon during the 2022–2025 mission" },
+      { "value": "3 days → 30 min", "label": "Infrastructure validation time with end-to-end tests at Decathlon during the 2022–2025 mission" }
     ],
-    "certsTitle": "Certifications",
-    "certs": [
-      { "name": "Google Cloud Associate Cloud Engineer", "date": "Feb 2025" },
-      { "name": "HashiCorp Certified: Terraform Associate (003)", "date": "Sep 2024" },
-      { "name": "AWS Certified Cloud Practitioner", "date": "Nov 2022" }
+    "cases": [
+      {
+        "title": "Standardising network resources",
+        "context": "Decathlon · Cloud Foundation / Cloud Dev · 2022–2025",
+        "text": "Built a Terraform provider in Go to standardise VPC, subnet and certificate provisioning, with automated end-to-end tests.",
+        "result": "Validation reduced from 3 days to 30 minutes with terraform test and pytest."
+      },
+      {
+        "title": "Improving self-service provisioning",
+        "context": "ADEO · Landing Zone product · Mission completed",
+        "text": "Built and improved internal Python/FastAPI APIs and SDKs for GCP/Azure provisioning. Added automated tests, standardised error handling and improved service observability.",
+        "result": "Contributed to the quality and maintainability of the internal platform."
+      },
+      {
+        "title": "Exploring agentic AI for Cloud Ops",
+        "context": "Decathlon · Cloud Foundation / CPE · Since May 2026",
+        "text": "Alongside GCP and AWS landing zone operations, working on creating AI agents for support and technology monitoring.",
+        "result": "Work in progress: agents for the team’s operational needs."
+      }
     ]
   },
   "experience": {
@@ -68,17 +76,17 @@
       {
         "company": "Decathlon",
         "role": "Cloud Ops Engineer (freelance)",
-        "period": "Present",
+        "period": "Since May 2026",
         "points": [
-          "Back in the Cloud Foundation team, operating the GCP and AWS landing zones used by product teams.",
-          "Run, incident handling and root-cause analysis on a multi-cloud platform.",
-          "Evolving Terraform infrastructure and Python tooling, using AI assistants to speed up delivery with review and tests."
+          "Back in the Cloud Foundation team within CPE to operate and evolve GCP and AWS landing zones.",
+          "Day-to-day cloud platform operations and ownership of the team’s operational work.",
+          "Ongoing work on creating AI agents for support and technology monitoring."
         ]
       },
       {
         "company": "ADEO",
         "role": "Cloud / Platform Engineer",
-        "period": "Oct 2025 – 2026",
+        "period": "From Oct 2025 · Mission completed",
         "points": [
           "Built and tested internal provisioning APIs and SDKs (Python, FastAPI) for a self-service landing zone on GCP and Azure.",
           "Owned run and production incidents; fixed GitHub security alerts (Dependabot, Code Scanning)."
@@ -99,23 +107,70 @@
         "company": "EDF",
         "role": "Software Developer (internship)",
         "period": "Mar – Sep 2022",
-        "points": ["Developed and maintained three applications for accounting, treasury and trading data flows."]
+        "points": [
+          "Developed and maintained three applications for accounting, treasury and trading data flows."
+        ]
       },
       {
         "company": "EquensWorldline",
         "role": "Junior DevOps (internship)",
         "period": "May – Aug 2020",
-        "points": ["Containerised a payment application with Docker and improved its CI/CD pipelines."]
+        "points": [
+          "Containerised a payment application with Docker and improved its CI/CD pipelines."
+        ]
       }
     ]
   },
   "skills": {
     "title": "Toolbox",
     "groups": [
-      { "title": "Cloud", "items": ["Google Cloud", "AWS", "Azure", "Landing zones", "IAM", "Networking", "Cloud Run", "Cloud Functions"] },
-      { "title": "Infrastructure as code", "items": ["Terraform", "Terragrunt", "terraform test", "Docker", "Linux"] },
-      { "title": "Automation and code", "items": ["Python", "FastAPI", "Go", "Bash", "GitHub Actions", "pytest", "AI-assisted development"] },
-      { "title": "Run, security and cost", "items": ["Datadog", "HashiCorp Vault", "Dependabot", "Code Scanning", "FinOps", "Jira", "ServiceNow"] }
+      {
+        "title": "Cloud",
+        "items": [
+          "Google Cloud",
+          "AWS",
+          "Azure",
+          "Landing zones",
+          "IAM",
+          "Networking",
+          "Cloud Run",
+          "Cloud Functions"
+        ]
+      },
+      {
+        "title": "Infrastructure as code",
+        "items": [
+          "Terraform",
+          "Terragrunt",
+          "terraform test",
+          "Docker",
+          "Linux"
+        ]
+      },
+      {
+        "title": "Automation and code",
+        "items": [
+          "Python",
+          "FastAPI",
+          "Go",
+          "Bash",
+          "GitHub Actions",
+          "pytest",
+          "Support and technology monitoring AI agents"
+        ]
+      },
+      {
+        "title": "Run, security and cost",
+        "items": [
+          "Datadog",
+          "HashiCorp Vault",
+          "Dependabot",
+          "Code Scanning",
+          "FinOps",
+          "Jira",
+          "ServiceNow"
+        ]
+      }
     ]
   },
   "engagement": {
@@ -132,5 +187,24 @@
     "text": "I am on a mission right now and not available. Tell me about your platform, the scope and the timeline, and I will let you know when I can start.",
     "cta": "Get in touch"
   },
-  "footer": { "rights": "All rights reserved." }
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "certifications": {
+    "title": "Cloud and Infrastructure as Code certifications",
+    "subtitle": "Certifications earned throughout my career, with their award dates.",
+    "obtained": "Earned in",
+    "items": [
+      { "name": "Google Cloud Associate Cloud Engineer", "date": "Feb 2025", "issuer": "Google Cloud", "scope": "Operating and administering Google Cloud environments." },
+      { "name": "HashiCorp Certified: Terraform Associate (003)", "date": "Sep 2024", "issuer": "HashiCorp", "scope": "Infrastructure as Code and Terraform resource lifecycle management." },
+      { "name": "AWS Certified Cloud Practitioner", "date": "Nov 2022", "issuer": "Amazon Web Services", "scope": "AWS service fundamentals and cloud security." }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      { "degree": "Master’s degree in Software Engineering", "school": "University of Lille", "period": "2020–2022", "text": "Software architecture, software engineering and application quality." },
+      { "degree": "Bachelor’s degree in Computer Science", "school": "University of Lille", "period": "2016–2020", "text": "Algorithms, software development, systems and networking." }
+    ]
+  }
 }
