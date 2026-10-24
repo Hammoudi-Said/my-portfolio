@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { SITE } from "@/lib/site";
 
-const NAV = ["experience", "certifications", "proof", "services", "contact"] as const;
+const NAV = ["services", "proof", "experience", "contact"] as const;
 
 export function Header() {
   const t = useTranslations();
@@ -13,7 +13,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
         <a href="#top" className="text-lg font-medium text-ink">Said Hammoudi</a>
-        <nav aria-label="Main" className="hidden gap-5 text-sm text-muted lg:flex">
+        <nav aria-label="Main" className="hidden gap-8 text-sm text-muted md:flex">
           {NAV.map((id) => (
             <a key={id} href={`#${id}`} className="hover:text-ink">
               {t(`nav.${id}`)}

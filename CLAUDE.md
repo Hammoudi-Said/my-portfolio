@@ -17,7 +17,6 @@ Freelance cloud/DevOps portfolio for Said Hammoudi, targeting startups/SMEs. Goa
 - Security headers (CSP, HSTS, etc.) are in `next.config.ts`. The CSP allows only `'self'`: adding any third-party script, font, image host or analytics means updating it.
 - JSON-LD in `[locale]/layout.tsx` escapes `<`; keep that when changing it. Do not add `Review` schema without real, verifiable testimonials.
 - Design is a light, Google-style theme (Roboto, tokens `ink`, `muted`, `line`, `surface`, `brand` in `tailwind.config.ts`). Positioning: freelance Cloud Ops / Platform Engineer for long-term missions, currently on mission at Decathlon (Cloud Foundation, GCP/AWS landing zones) and not available; avoid the words junior/senior.
-- The current Decathlon mission started in May 2026, in Cloud Foundation within CPE. AI agents for support and technology monitoring are work in progress. ADEO is a completed mission; its exact end date has not been confirmed. Keep the two Decathlon missions distinct, and attribute the 164 tickets/month and 3 days → 30 minutes results to the 2022–2025 mission.
 - Never add unverifiable numbers or testimonials: the old site had invented ones (99.99% SLA, -85% alerts, fake quotes) that were removed on purpose.
 - The contact email in `src/lib/site.ts` is `hammoudi.pro6@gmail.com`; the phone number is deliberately not published.
 - Fonts load from Google at build time, so builds need network access.
