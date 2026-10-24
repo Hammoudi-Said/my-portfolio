@@ -1,0 +1,460 @@
+//@version=6
+strategy("Stratégie Crypto Optimisée RSI + SuperTrend + Volume", overlay=true, 
+     initial_capital=10000, default_qty_type=strategy.percent_of_equity, 
+     default_qty_value=1, // Keep only one value here
+     commission_type=strategy.commission.percent, commission_value=0.1,
+     pyramiding=2, calc_on_order_fills=true, close_entries_rule="ANY", 
+     currency=currency.USD)
+
+// ======== PARAMÈTRES AJUSTABLES ========
+// Mode de trading
+g_mode = "Mode de Trading"
+modeAgressif = input.bool(false, "Mode Agressif", group=g_mode, tooltip="Mode conservateur (false) ou agressif (true)")
+useShorts = input.bool(true, "Activer positions courtes", group=g_mode, tooltip="Activer les positions vendeuses (short)")
+
+// Paramètres RSI
+g_rsi = "Paramètres RSI"
+rsiLength = input.int(14, "Période RSI", minval=1, group=g_rsi)
+rsiSurAchat = input.int(70, "Niveau de Surachat", minval=50, maxval=100, group=g_rsi)
+rsiSurVente = input.int(30, "Niveau de Survente", minval=0, maxval=50, group=g_rsi)
+rsiSortie = input.int(55, "Niveau de sortie (long)", minval=40, maxval=70, group=g_rsi)
+rsiSortieCourt = input.int(45, "Niveau de sortie (court)", minval=30, maxval=60, group=g_rsi)
+
+// Paramètres SuperTrend
+g_st = "Paramètres SuperTrend"
+stPeriode = input.int(10, "Période SuperTrend", minval=1, group=g_st)
+stMulti = input.float(3.0, "Multiplicateur SuperTrend", minval=0.5, step=0.1, group=g_st)
+
+// Paramètres Volume
+g_vol = "Paramètres Volume"
+volPeriode = input.int(20, "Période Moyenne Volume", minval=1, group=g_vol)
+volMulti = input.float(1.5, "Multiplicateur Volume", minval=0.5, step=0.1, group=g_vol)
+
+// Paramètres Anti-Chop
+g_chop = "Anti-Chop"
+useAntiChop = input.bool(true, "Activer filtre anti-chop", group=g_chop)
+chopSeuil = input.int(40, "Seuil Choppiness Index", minval=1, maxval=100, group=g_chop)
+chopPeriode = input.int(14, "Période Choppiness Index", minval=1, group=g_chop)
+
+// Paramètres de gestion des ordres
+g_ordres = "Gestion des Ordres"
+usePriseProfit = input.bool(true, "Utiliser prises de profits échelonnées", group=g_ordres)
+useStopDynamique = input.bool(true, "Utiliser stop-loss dynamique", group=g_ordres)
+useLimitOrders = input.bool(true, "Utiliser ordres limites pour entrée", group=g_ordres)
+limitOrderRetracement = input.float(0.3, "Pourcentage de retrait pour ordre limite (%)", minval=0.1, maxval=5.0, step=0.1, group=g_ordres)
+// Paramètres de prise de profit
+g_tp = "Prises de Profit"
+tp1Percent = input.float(1.5, "Prise de profit 1 (%)", minval=0.5, step=0.1, group=g_tp) 
+tp2Percent = input.float(3.0, "Prise de profit 2 (%)", minval=1.0, step=0.1, group=g_tp)
+tp3Percent = input.float(5.0, "Prise de profit 3 (%)", minval=2.0, step=0.1, group=g_tp)
+tp1Size = input.float(30, "Taille de la PP1 (%)", minval=5, maxval=90, step=5, group=g_tp)
+tp2Size = input.float(30, "Taille de la PP2 (%)", minval=5, maxval=90, step=5, group=g_tp)
+tp3Size = input.float(40, "Taille de la PP3 (%)", minval=5, maxval=90, step=5, group=g_tp)
+
+// Correction potentielle: vérifier que la somme fait 100%
+var float totalTPSize = tp1Size + tp2Size + tp3Size
+if totalTPSize != 100
+    tp3Size := math.max(0, 100 - tp1Size - tp2Size)  // Ajuster automatiquement
+
+// Paramètres de Stop Loss
+g_sl = "Stop Loss"
+stopLossPercent = input.float(2.0, "Stop Loss fixe (%)", minval=0.5, step=0.1, group=g_sl)
+trailingStopPercent = input.float(1.5, "Trailing Stop (%)", minval=0.5, step=0.1, group=g_sl)
+trailingActivation = input.float(1.0, "Activation Trailing Stop (%)", minval=0.5, step=0.1, group=g_sl)
+atrMultiplier = input.float(2.0, "Multiplicateur ATR pour Stop", minval=0.5, step=0.1, group=g_sl)
+atrPeriod = input.int(14, "Période ATR", minval=1, group=g_sl)
+
+// Gestion des risques
+g_risk = "Gestion des risques"
+drawdownMax = input.float(20, "Drawdown Maximum (%)", minval=1, maxval=100, group=g_risk)
+maxRiskPerTrade = input.float(1.0, "Risque max par trade (%)", minval=0.1, maxval=5, step=0.1, group=g_risk)
+
+// Paramètres visuels
+g_visuel = "Affichage"
+showTrades = input.bool(true, "Afficher signaux de trading", group=g_visuel)
+showStops = input.bool(true, "Afficher les stops et TP", group=g_visuel)
+showStats = input.bool(true, "Afficher tableau de statistiques", group=g_visuel)
+
+// ======== CALCUL DES INDICATEURS ========
+// RSI
+rsiValue = ta.rsi(close, rsiLength)
+
+// SuperTrend
+[supertrendDirection, supertrendValue] = ta.supertrend(stMulti, stPeriode)
+trendHaussier = supertrendDirection < 0
+trendBaissier = supertrendDirection > 0
+
+// Volume
+volumeMoyen = ta.sma(volume, volPeriode)
+volumeSignificatif = volume > volumeMoyen * volMulti
+
+// ATR pour stops dynamiques
+atrValue = ta.atr(atrPeriod)
+
+// Choppiness Index (mesure de tendance plate)
+var float choppiness = 0.0
+var bool nonChoppy = true
+
+if useAntiChop
+    high_low_range = math.max(high - low, 0.000001)  // Évite division par zéro
+    sumRange = 0.0
+    for i = 0 to chopPeriode - 1
+        sumRange += high_low_range  // Utilisation de l'opérateur += pour simplifier
+
+    maxHigh = ta.highest(high, chopPeriode)
+    minLow = ta.lowest(low, chopPeriode)
+    denominator = math.max(maxHigh - minLow, 0.000001)  // Éviter division par zéro
+
+    choppiness := 100 * math.log10(sumRange / denominator) / math.log10(chopPeriode)
+    nonChoppy := choppiness < chopSeuil
+else
+    nonChoppy := true  // Si la fonction anti-chop est désactivée, toujours considérer comme directionnel
+
+// ======== CONDITIONS DE TRADING ========
+// Conditions d'entrée
+condEntreeLong = modeAgressif ? 
+                  (rsiValue < rsiSurVente + 10 and trendHaussier and volumeSignificatif and nonChoppy) :
+                  (rsiValue < rsiSurVente and trendHaussier and volumeSignificatif and nonChoppy)
+
+condEntreeCourt = modeAgressif ?
+                  (rsiValue > rsiSurAchat - 10 and trendBaissier and volumeSignificatif and nonChoppy) :
+                  (rsiValue > rsiSurAchat and trendBaissier and volumeSignificatif and nonChoppy)
+
+// Conditions de sortie
+condSortieLong = modeAgressif ?
+                 (rsiValue > rsiSortie + 10 or trendBaissier) :
+                 (rsiValue > rsiSortie or trendBaissier or not volumeSignificatif)
+
+condSortieCourt = modeAgressif ?
+                  (rsiValue < rsiSortieCourt - 10 or trendHaussier) :
+                  (rsiValue < rsiSortieCourt or trendHaussier or not volumeSignificatif)
+
+// ======== VARIABLES DE GESTION DES POSITIONS ========
+var positionEnCours = "aucune"
+var drawdown = 0.0
+var maxEquity = 0.0
+var float entryPrice = 0.0
+var float stopLossLevel = 0.0
+var float trailingStopLevel = 0.0
+var bool trailingActivated = false
+var int positionSize = 0
+var int partialTpTriggered = 0
+
+// Variables pour les ordres
+var float tp1Price = 0.0
+var float tp2Price = 0.0
+var float tp3Price = 0.0
+var int tp1Qty = 0
+var int tp2Qty = 0
+var int tp3Qty = 0
+
+// ======== CALCUL DES PRIX D'ORDRES ET STOPS ========
+// Calcul des stops dynamiques
+float dynamicStopLoss = 0.0
+if useStopDynamique
+    if trendHaussier
+        dynamicStopLoss := close - atrValue * atrMultiplier
+    else if trendBaissier
+        dynamicStopLoss := close + atrValue * atrMultiplier
+    else
+        dynamicStopLoss := positionEnCours == "long" ? close * (1 - stopLossPercent / 100) : 
+                        positionEnCours == "court" ? close * (1 + stopLossPercent / 100) : 0.0
+
+// Mise à jour du drawdown
+maxEquity := math.max(maxEquity, strategy.equity)
+drawdown := maxEquity > 0 ? (maxEquity - strategy.equity) / maxEquity * 100 : 0
+
+// ======== FONCTIONS UTILITAIRES ========
+// Fonction pour calculer la taille des positions selon le risque
+calcPositionSize(currentPrice, stopLevel) =>
+    riskAmount = strategy.equity * maxRiskPerTrade / 100
+    stopDistance = math.abs(currentPrice - stopLevel)
+    if stopDistance > 0
+        Math.round(riskAmount / stopDistance)
+    else
+        math.round(strategy.equity * maxRiskPerTrade / 100 / currentPrice)  // Fallback
+
+// ======== EXÉCUTION DE LA STRATÉGIE ========
+if strategy.position_size == 0
+    positionEnCours := "aucune"  // S'assurer que l'état est cohérent avec la position réelle
+
+if drawdown <= drawdownMax
+    // Gestion des entrées positions longues
+    if condEntreeLong and (positionEnCours == "aucune" or strategy.position_size == 0)
+        // Calcul du stop loss initial
+        stopLevel = useStopDynamique ? dynamicStopLoss : close * (1 - stopLossPercent / 100)
+        
+        // Calcul de la taille de position basée sur le risque
+        positionSize := calcPositionSize(close, stopLevel)
+        
+        // Entrée au marché ou limite selon configuration
+        if useLimitOrders
+            limitPrice = close * (1 - limitOrderRetracement / 100)
+            strategy.entry("Long", strategy.long, qty=positionSize, limit=limitPrice, comment="Entrée limite")
+            entryPrice := limitPrice
+        else
+            strategy.entry("Long", strategy.long, qty=positionSize, comment="Entrée marché")
+            entryPrice := close
+        
+        // Calcul des stops
+        stopLossLevel := useStopDynamique ? dynamicStopLoss : entryPrice * (1 - stopLossPercent / 100)
+        trailingStopLevel := entryPrice * (1 - trailingStopPercent / 100)
+        trailingActivated := false
+        positionEnCours := "long"
+        partialTpTriggered := 0
+        
+        // Définir les ordres de Take Profit échelonnés
+        if usePriseProfit
+            tp1Price := entryPrice * (1 + tp1Percent / 100)
+            tp2Price := entryPrice * (1 + tp2Percent / 100)
+            tp3Price := entryPrice * (1 + tp3Percent / 100)
+            
+            tp1Qty := math.round(positionSize * tp1Size / 100)
+            tp2Qty := math.round(positionSize * tp2Size / 100)
+            tp3Qty := positionSize - tp1Qty - tp2Qty
+            
+            if tp1Qty > 0
+                strategy.order("TP1", strategy.long, qty=-tp1Qty, limit=tp1Price, comment="Prise Profit 1")
+            if tp2Qty > 0
+                strategy.order("TP2", strategy.long, qty=-tp2Qty, limit=tp2Price, comment="Prise Profit 2") 
+            if tp3Qty > 0
+                strategy.order("TP3", strategy.long, qty=-tp3Qty, limit=tp3Price, comment="Prise Profit 3")
+    
+    // Gestion des entrées positions courtes
+    if condEntreeCourt and (positionEnCours == "aucune" or strategy.position_size == 0) and useShorts
+        // Calcul du stop loss initial
+        stopLevel = useStopDynamique ? dynamicStopLoss : close * (1 + stopLossPercent / 100)
+        
+        // Calcul de la taille de position basée sur le risque
+        positionSize := calcPositionSize(close, stopLevel)
+        
+        // Entrée au marché ou limite selon configuration
+        if useLimitOrders
+            limitPrice = close * (1 + limitOrderRetracement / 100)
+            strategy.entry("Short", strategy.short, qty=positionSize, limit=limitPrice, comment="Entrée limite short")
+            entryPrice := limitPrice
+        else
+            strategy.entry("Short", strategy.short, qty=positionSize, comment="Entrée marché short")
+            entryPrice := close
+        
+        // Calcul des stops
+        stopLossLevel := useStopDynamique ? dynamicStopLoss : entryPrice * (1 + stopLossPercent / 100)
+        trailingStopLevel := entryPrice * (1 + trailingStopPercent / 100)
+        trailingActivated := false
+        positionEnCours := "court"
+        partialTpTriggered := 0
+        
+        // Définir les ordres de Take Profit échelonnés
+        if usePriseProfit
+            tp1Price := entryPrice * (1 - tp1Percent / 100)
+            tp2Price := entryPrice * (1 - tp2Percent / 100)
+            tp3Price := entryPrice * (1 - tp3Percent / 100)
+            
+            tp1Qty := math.round(positionSize * tp1Size / 100)
+            tp2Qty := math.round(positionSize * tp2Size / 100)
+            tp3Qty := positionSize - tp1Qty - tp2Qty
+            
+            if tp1Qty > 0
+                strategy.order("TP1 Short", strategy.short, qty=-tp1Qty, limit=tp1Price, comment="Prise Profit 1 Short")
+            if tp2Qty > 0 
+                strategy.order("TP2 Short", strategy.short, qty=-tp2Qty, limit=tp2Price, comment="Prise Profit 2 Short") 
+            if tp3Qty > 0
+                strategy.order("TP3 Short", strategy.short, qty=-tp3Qty, limit=tp3Price, comment="Prise Profit 3 Short")
+    
+    // Gestion des stops et sorties pour les positions longues
+    if strategy.position_size > 0 and positionEnCours == "long"
+        // Gestion du trailing stop
+        if useStopDynamique
+            if close > entryPrice * (1 + trailingActivation / 100)
+                trailingActivated := true
+                
+            if trailingActivated
+                potentialStopLevel = close * (1 - trailingStopPercent / 100)
+                if potentialStopLevel > trailingStopLevel
+                    trailingStopLevel := potentialStopLevel
+                
+                // Exécuter le trailing stop
+                if close < trailingStopLevel
+                    strategy.close("Long", comment="Trailing Stop")
+                    positionEnCours := "aucune"
+        
+        // Stop loss fixe ou dynamique
+        stopLevel = useStopDynamique ? math.max(dynamicStopLoss, stopLossLevel) : stopLossLevel
+        if close < stopLevel and close < entryPrice  // Vérifie qu'on est en perte
+            strategy.close("Long", comment="Stop Loss")
+            positionEnCours := "aucune"
+        
+        // Fermeture sur signal de sortie
+        if condSortieLong
+            strategy.close("Long", comment="Signal sortie")
+            positionEnCours := "aucune"
+    
+    // Gestion des stops et sorties pour les positions courtes
+    if strategy.position_size < 0 and positionEnCours == "court"
+        // Gestion du trailing stop
+        if useStopDynamique
+            if close < entryPrice * (1 - trailingActivation / 100)
+                trailingActivated := true
+                
+            if trailingActivated
+                potentialStopLevel = close * (1 + trailingStopPercent / 100)
+                if potentialStopLevel < trailingStopLevel or trailingStopLevel == 0
+                    trailingStopLevel := potentialStopLevel
+                
+                // Exécuter le trailing stop
+                if close > trailingStopLevel
+                    strategy.close("Short", comment="Trailing Stop")
+                    positionEnCours := "aucune"
+        
+        // Stop loss fixe ou dynamique
+        stopLevel = useStopDynamique ? math.min(dynamicStopLoss, stopLossLevel) : stopLossLevel
+        if close > stopLevel and close > entryPrice  // Vérifie qu'on est en perte
+            strategy.close("Short", comment="Stop Loss")
+            positionEnCours := "aucune"
+        
+        // Fermeture sur signal de sortie
+        if condSortieCourt
+            strategy.close("Short", comment="Signal sortie")
+            positionEnCours := "aucune"
+
+// ======== VISUALISATION ========
+// Couleurs
+colorHaussier = color.rgb(76, 175, 80, 70)  // Vert
+colorBaissier = color.rgb(255, 82, 82, 70)  // Rouge
+colorNeutre = color.rgb(158, 158, 158, 70)  // Gris
+
+// Coloration de fond selon la tendance
+bgcolor(trendHaussier and nonChoppy ? colorHaussier : trendBaissier and nonChoppy ? colorBaissier : colorNeutre)
+
+// Affichage SuperTrend
+plot(trendHaussier ? supertrendValue : na, "SuperTrend Support", color=color.green, linewidth=2)
+plot(trendBaissier ? supertrendValue : na, "SuperTrend Résistance", color=color.red, linewidth=2)
+
+// Affichage des niveaux d'ordre et stops
+var float stopLossPlotValue = na
+var float trailingStopPlotValue = na
+var float tp1PlotValue = na
+var float tp2PlotValue = na
+var float tp3PlotValue = na
+
+if showStops and (positionEnCours == "long" or positionEnCours == "court")
+    stopLossPlotValue := positionEnCours == "long" ? stopLossLevel : positionEnCours == "court" ? stopLossLevel : na
+    trailingStopPlotValue := trailingActivated ? trailingStopLevel : na
+
+    // Affichage des prises de profits pour position longue
+    if usePriseProfit and positionEnCours == "long"
+        tp1PlotValue := tp1Price > 0 ? tp1Price : na
+        tp2PlotValue := tp2Price > 0 ? tp2Price : na
+        tp3PlotValue := tp3Price > 0 ? tp3Price : na
+
+    // Affichage des prises de profits pour position courte
+    if usePriseProfit and positionEnCours == "court"
+        tp1PlotValue := tp1Price > 0 ? tp1Price : na
+        tp2PlotValue := tp2Price > 0 ? tp2Price : na
+        tp3PlotValue := tp3Price > 0 ? tp3Price : na
+
+plot(stopLossPlotValue, "Stop Loss", color=color.red, style=plot.style_cross)
+plot(trailingStopPlotValue, "Trailing Stop", color=color.orange, style=plot.style_circles)
+plot(tp1PlotValue, "TP1", color=color.green, style=plot.style_circles)
+plot(tp2PlotValue, "TP2", color=color.green, style=plot.style_circles)
+plot(tp3PlotValue, "TP3", color=color.green, style=plot.style_circles)
+
+// Affichage des signaux d'entrée/sortie
+plotshape(showTrades and condEntreeLong and (positionEnCours == "aucune" or strategy.position_size == 0) ? low * 0.995 : na, 
+         "Signal d'achat", shape.triangleup, location.belowbar, color.green, size=size.small)
+
+plotshape(showTrades and condEntreeCourt and (positionEnCours == "aucune" or strategy.position_size == 0) and useShorts ? high * 1.005 : na, 
+         "Signal de vente", shape.triangledown, location.abovebar, color.red, size=size.small)
+
+plotshape(showTrades and condSortieLong and positionEnCours == "long" ? high * 1.005 : na, 
+         "Signal de sortie long", shape.xcross, location.abovebar, color.orange, size=size.small)
+
+plotshape(showTrades and condSortieCourt and positionEnCours == "court" ? low * 0.995 : na, 
+         "Signal de sortie court", shape.xcross, location.belowbar, color.orange, size=size.small)
+
+// ======== INDICATEURS SUPPLÉMENTAIRES (fenêtres séparées) ========
+// RSI
+plotRSI = plot(rsiValue, "RSI", color=color.blue, title="RSI", display=display.none)
+hline(rsiSurAchat, "Niveau de surachat", color=color.red, linestyle=hline.style_dashed, display=display.none)
+hline(rsiSurVente, "Niveau de survente", color=color.green, linestyle=hline.style_dashed, display=display.none)
+hline(50, "Niveau neutre RSI", color=color.gray, linestyle=hline.style_dotted, display=display.none)
+
+// Choppiness Index
+plotChop = plot(useAntiChop ? choppiness : na, "Choppiness Index", color=color.purple, title="Choppiness", display=display.none)
+hline(chopSeuil, "Seuil Choppiness", color=color.orange, linestyle=hline.style_dashed, display=display.none)
+
+// ======== ALERTES ========
+// Alerte d'entrée long
+alertcondition(condEntreeLong and (positionEnCours == "aucune" or strategy.position_size == 0), 
+              "Signal d'achat", "Signal d'entrée LONG détecté")
+
+// Alerte d'entrée court (si activé)
+alertcondition(condEntreeCourt and (positionEnCours == "aucune" or strategy.position_size == 0) and useShorts, 
+              "Signal de vente", "Signal d'entrée SHORT détecté")
+
+// Alerte de sortie
+alertcondition(condSortieLong and positionEnCours == "long", 
+              "Signal de sortie long", "Signal de sortie LONG détecté")
+alertcondition(condSortieCourt and positionEnCours == "court", 
+              "Signal de sortie court", "Signal de sortie SHORT détecté")
+
+// Alertes TP/SL
+alertcondition(close >= entryPrice * (1 + tp1Percent / 100) and positionEnCours == "long", 
+              "TP1 atteint", "Target Profit 1 Long atteint")
+alertcondition(close <= entryPrice * (1 - tp1Percent / 100) and positionEnCours == "court", 
+              "TP1 atteint short", "Target Profit 1 Short atteint")
+
+// ======== STATISTIQUES ET PERFORMANCE ======== 
+if showStats
+    var table infoTable = table.new(position.top_right, 4, 5, color.black, color.white, 2, color.gray, 1)
+    
+    // Mettre à jour le tableau uniquement à la dernière bougie confirmée
+    if barstate.islastconfirmedhistory
+        // En-tête
+        table.cell(infoTable, 0, 0, "Stratégie Crypto", text_color=color.white, bgcolor=color.rgb(33, 150, 243))
+        table.cell(infoTable, 1, 0, modeAgressif ? "Mode: AGRESSIF" : "Mode: CONSERVATEUR", text_color=color.white, bgcolor=color.rgb(33, 150, 243))
+        table.cell(infoTable, 2, 0, "PnL", text_color=color.white, bgcolor=color.rgb(33, 150, 243))
+        table.cell(infoTable, 3, 0, "Drawdown", text_color=color.white, bgcolor=color.rgb(33, 150, 243))
+        
+        // Statistiques
+        totalTrades = strategy.closedtrades
+        winTrades = strategy.wintrades
+        winRate = totalTrades > 0 ? (winTrades / totalTrades) * 100 : 0
+        
+        table.cell(infoTable, 0, 1, "Trades: " + str.tostring(totalTrades), text_color=color.black)
+        table.cell(infoTable, 1, 1, "Winrate: " + str.tostring(winRate, "#.##") + "%", 
+                  text_color=winRate >= 50 ? color.green : color.red)
+        table.cell(infoTable, 2, 1, str.tostring(strategy.netprofit, "#.##") + "$", 
+                  text_color=strategy.netprofit >= 0 ? color.green : color.red)
+        table.cell(infoTable, 3, 1, str.tostring(drawdown, "#.##") + "%", 
+                  text_color=drawdown < drawdownMax/2 ? color.green : drawdown < drawdownMax ? color.orange : color.red)
+        
+        // Informations sur les signaux actuels
+        table.cell(infoTable, 0, 2, "RSI: " + str.tostring(rsiValue, "#.##"), text_color=color.black)
+        table.cell(infoTable, 1, 2, trendHaussier ? "Tendance: HAUSSE" : "Tendance: BAISSE", 
+                  text_color=trendHaussier ? color.green : color.red)
+        table.cell(infoTable, 2, 2, volumeSignificatif ? "Volume: ÉLEVÉ" : "Volume: FAIBLE", 
+                  text_color=volumeSignificatif ? color.green : color.gray)
+        table.cell(infoTable, 3, 2, nonChoppy ? "Marché: DIRECTIONNEL" : "Marché: CHOPPY", 
+                  text_color=nonChoppy ? color.green : color.red)
+        
+        // État actuel
+        table.cell(infoTable, 0, 3, "Position:", text_color=color.black)
+        table.cell(infoTable, 1, 3, positionEnCours == "long" ? "LONG" : positionEnCours == "court" ? "SHORT" : "AUCUNE", 
+                  text_color=positionEnCours == "long" ? color.green : positionEnCours == "court" ? color.red : color.gray)
+        table.cell(infoTable, 2, 3, "Prof. act.: " + str.tostring(strategy.openprofit, "#.##") + "$", 
+                  text_color=strategy.openprofit >= 0 ? color.green : color.red)
+        table.cell(infoTable, 3, 3, "ROI: " + str.tostring(strategy.netprofit/10000*100, "#.##") + "%", 
+                  text_color=strategy.netprofit >= 0 ? color.green : color.red)
+        
+        // Métriques supplémentaires
+        float profitFactor = strategy.grossprofit > 0 ? strategy.grossprofit / math.max(strategy.grossloss, 1) : 0
+        float avgWin = winTrades > 0 ? strategy.grossprofit / winTrades : 0
+        float avgLoss = (totalTrades - winTrades) > 0 ? strategy.grossloss / (totalTrades - winTrades) : 0
+        float rrRatio = avgLoss != 0 ? math.abs(avgWin / avgLoss) : 0
+        
+        table.cell(infoTable,
+        0, 4, "Profit Factor: " + str.tostring(profitFactor, "#.##"), text_color=color.black)
+            table.cell(infoTable, 1, 4, "Avg Win: " + str.tostring(avgWin, "#.##") + "$", text_color=color.green)
+            table.cell(infoTable, 2, 4, "Avg Loss: " + str.tostring(avgLoss, "#.##") + "$", text_color=color.red)
+            table.cell(infoTable, 3, 4, "RR Ratio: " + str.tostring(rrRatio, "#.##"), text_color=rrRatio >= 1 ? color.green : color.red)
