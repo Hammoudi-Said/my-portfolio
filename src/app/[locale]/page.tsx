@@ -10,7 +10,7 @@ import { SITE } from "@/lib/site";
 
 interface Service { title: string; text: string }
 interface Stat { value: string; label: string }
-interface Cert { name: string; date: string }
+interface Cert { name: string; date: string; image: string; url: string }
 interface Job { company: string; role: string; period: string; points: string[] }
 interface SkillGroup { title: string; items: string[] }
 interface Term { title: string; text: string }
@@ -92,8 +92,11 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
           <h3 className="mt-16 text-xl font-medium text-ink">{t("proof.certsTitle")}</h3>
           <ul className="mt-5 flex flex-wrap gap-3">
             {(t.raw("proof.certs") as Cert[]).map((c) => (
-              <li key={c.name} className="rounded-full border border-line px-5 py-2 text-sm text-ink">
-                {c.name} <span className="text-muted">· {c.date}</span>
+              <li key={c.name}>
+                <a href={c.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 rounded-2xl border border-line px-4 py-3 text-sm text-ink hover:border-brand">
+                  <Image src={c.image} alt="" width={48} height={48} className="h-12 w-12 object-contain" />
+                  <span>{c.name} <span className="block text-muted">{c.date}</span></span>
+                </a>
               </li>
             ))}
           </ul>
