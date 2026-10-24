@@ -21,7 +21,7 @@ The page puts experience and certifications before case studies, expertise, tool
 
 The current freelance mission at Decathlon started in May 2026, within CPE's Cloud Foundation team (GCP/AWS landing zones and ongoing work on AI agents for support and technology monitoring). ADEO is marked as completed without an unconfirmed end date. Historical operational metrics belong to the 2022–2025 Decathlon mission.
 
-The downloadable PDF is a previous CV version and does not include the current mission. Replace `public/cv-said-hammoudi.pdf` when the updated CV is ready. Certification award dates come from the CV; verification links point to the public Credly badges.
+The downloadable PDF is a previous CV version and does not include the current mission. Replace `public/cv-said-hammoudi.pdf` when the updated CV is ready. Certification award dates come from the CV; validity dates and verification links have not been supplied.
 
 ## Security
 
