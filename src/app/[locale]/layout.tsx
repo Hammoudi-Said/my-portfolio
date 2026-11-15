@@ -9,6 +9,21 @@ import "../globals.css";
 
 const sans = Roboto({ variable: "--font-sans", subsets: ["latin"], weight: ["300", "400", "500", "700"], display: "swap" });
 
+// GitHub Pages cannot send HTTP headers, so the CSP is delivered as a meta tag.
+// frame-ancestors is ignored in meta CSP; 'unsafe-inline' is needed for Next's inline bootstrap.
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self'",
+  "connect-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "upgrade-insecure-requests",
+].join("; ");
+
 const OG_LOCALE = { en: "en_US", fr: "fr_FR" } as const;
 
 export function generateStaticParams() {
@@ -84,6 +99,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={sans.variable}>
+      <head>
+        <meta httpEquiv="Content-Security-Policy" content={CSP} />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+      </head>
       <body className="min-h-screen bg-white font-sans text-ink antialiased selection:bg-brand-soft">
         <script
           type="application/ld+json"

@@ -1,5 +1,12 @@
 import { ImageResponse } from "next/og";
 import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
+
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export const alt = "Said Hammoudi";
 export const size = { width: 1200, height: 630 };

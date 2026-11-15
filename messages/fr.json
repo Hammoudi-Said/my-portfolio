@@ -1,19 +1,19 @@
 {
   "meta": {
     "title": "Said Hammoudi | Ingénieur Cloud Ops & Platform Engineer freelance",
-    "description": "Ingénieur Cloud Ops et Platform Engineer freelance avec 4 ans d'expérience sur les landing zones GCP et AWS (Decathlon, ADEO). Terraform, Python, automatisation et responsabilité du run pour missions longue durée.",
+    "description": "Ingénieur Cloud DevOps et Platform Engineer freelance : landing zones GCP et AWS, providers Terraform sur mesure en Go, automatisation Python et responsabilité du run. 4 ans d'expérience (Decathlon, ADEO).",
     "ogTitle": "Cloud Ops & Platform Engineer",
-    "ogTagline": "Freelance · Landing zones GCP et AWS, Terraform, Python"
+    "ogTagline": "Freelance · Landing zones GCP et AWS, providers Terraform, Python"
   },
   "a11y": { "skip": "Aller au contenu", "language": "Langue" },
   "nav": { "services": "Expertise", "proof": "Résultats", "experience": "Expérience", "contact": "Contact", "cta": "Me contacter" },
   "hero": {
-    "badge": "Freelance · Actuellement en mission chez Decathlon",
+    "badge": "Freelance · Ingénieur Cloud DevOps",
     "title": "Cloud Ops et Platform Engineering, dans la durée.",
-    "subtitle": "Ingénieur Cloud Ops freelance avec quatre ans d'expérience sur GCP et AWS. J'exploite et fais évoluer des landing zones multi-cloud avec Terraform et Python, du run quotidien et de la gestion d'incidents à l'outillage plateforme et à l'automatisation.",
+    "subtitle": "Ingénieur Cloud DevOps freelance avec quatre ans d'expérience sur GCP et AWS. Je conçois et fais évoluer des landing zones multi-cloud et je développe des providers Terraform sur mesure en Go, pour que vos équipes produit provisionnent en libre-service, en sécurité.",
     "cta": "Me contacter",
     "cv": "Télécharger le CV",
-    "availability": "Pas disponible actuellement · Ouvert aux futures missions longue durée · Remote, Paris, Lille",
+    "availability": "En mission chez Decathlon depuis mai 2026 · Ouvert aux échanges pour de futures missions · Remote, Paris, Lille",
     "photoAlt": "Portrait de Said Hammoudi"
   },
   "services": {
@@ -21,12 +21,16 @@
     "subtitle": "Le périmètre d'une mission longue durée type au sein d'une équipe plateforme cloud.",
     "items": [
       {
-        "title": "Cloud operations",
-        "text": "Prise en charge au quotidien d'environnements multi-cloud : gestion des incidents et analyse de causes racines, support L3 et astreintes, amélioration continue du run."
+        "title": "Providers Terraform sur mesure",
+        "text": "Développement de providers Terraform custom en Go pour piloter vos APIs internes et vos ressources spécifiques en infrastructure as code, testés et versionnés comme n'importe quel module. Fait chez Decathlon pour industrialiser les ressources réseau."
       },
       {
-        "title": "Landing zones et gouvernance",
-        "text": "Organisation cloud, réseau, IAM et garde-fous sur GCP et AWS, construits en modules Terraform réutilisables que les équipes produit adoptent en autonomie."
+        "title": "Landing zones GCP et AWS",
+        "text": "Conception, exploitation et évolution de landing zones : organisation et comptes, réseau, IAM et garde-fous, livrés en modules Terraform réutilisables que les équipes produit adoptent en autonomie."
+      },
+      {
+        "title": "Cloud operations",
+        "text": "Prise en charge au quotidien d'environnements multi-cloud : gestion des incidents et analyse de causes racines, support L3 et astreintes, amélioration continue du run."
       },
       {
         "title": "Automatisation et delivery",
@@ -34,7 +38,7 @@
       },
       {
         "title": "Outillage interne et APIs",
-        "text": "APIs de provisioning en Python et FastAPI, workloads serverless sur Cloud Run et providers Terraform custom en Go, pour supprimer tickets et étapes manuelles."
+        "text": "APIs de provisioning en Python et FastAPI, workloads serverless sur Cloud Run et SDK internes, pour supprimer tickets et étapes manuelles."
       },
       {
         "title": "Sécurité et observabilité",
@@ -68,7 +72,7 @@
       {
         "company": "Decathlon",
         "role": "Cloud Ops Engineer (freelance)",
-        "period": "En cours",
+        "period": "Mai 2026 – aujourd'hui",
         "points": [
           "De retour dans l'équipe Cloud Foundation, exploitation des landing zones GCP et AWS utilisées par les équipes produit.",
           "Run, gestion des incidents et analyse de causes racines sur une plateforme multi-cloud.",
@@ -129,7 +133,7 @@
   },
   "contact": {
     "title": "Une mission Cloud Ops ou Platform en préparation ?",
-    "text": "Je suis actuellement en mission et pas disponible. Parlez-moi de votre plateforme, du périmètre et du calendrier, et je vous dirai quand je peux démarrer.",
+    "text": "Landing zone à poser ou à reprendre, provider Terraform à écrire, run à fiabiliser : parlez-moi de votre plateforme, du périmètre et du calendrier, et nous verrons ensemble quand démarrer.",
     "cta": "Me contacter"
   },
   "footer": { "rights": "Tous droits réservés." }
