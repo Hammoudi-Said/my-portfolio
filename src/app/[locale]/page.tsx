@@ -6,7 +6,7 @@ import { use } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { routing } from "@/i18n/routing";
-import { SITE } from "@/lib/site";
+import { asset, SITE } from "@/lib/site";
 
 interface Service { title: string; text: string }
 interface Stat { value: string; label: string }
@@ -51,12 +51,12 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{t("hero.subtitle")}</p>
             <div className="mt-10 flex flex-wrap gap-3">
               <a href={mail} className={primary}>{t("hero.cta")}</a>
-              <a href={SITE.cv} className={secondary}>{t("hero.cv")}</a>
+              <a href={asset(SITE.cv)} className={secondary}>{t("hero.cv")}</a>
             </div>
             <p className="mt-6 text-sm text-muted">{t("hero.availability")}</p>
           </div>
           <Image
-            src="/said-hammoudi.png"
+            src={asset("/said-hammoudi.png")}
             alt={t("hero.photoAlt")}
             width={240}
             height={240}
@@ -94,7 +94,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
             {(t.raw("proof.certs") as Cert[]).map((c) => (
               <li key={c.name}>
                 <a href={c.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 rounded-2xl border border-line px-4 py-3 text-sm text-ink hover:border-brand">
-                  <Image src={c.image} alt="" width={48} height={48} className="h-12 w-12 object-contain" />
+                  <Image src={asset(c.image)} alt="" width={48} height={48} className="h-12 w-12 object-contain" />
                   <span>{c.name} <span className="block text-muted">{c.date}</span></span>
                 </a>
               </li>

@@ -1,19 +1,19 @@
 {
   "meta": {
     "title": "Said Hammoudi | Freelance Cloud Ops & Platform Engineer",
-    "description": "Freelance Cloud Ops and Platform Engineer with 4 years of experience on GCP and AWS landing zones (Decathlon, ADEO). Terraform, Python, automation and run ownership for long-term missions.",
+    "description": "Freelance Cloud DevOps and Platform Engineer: GCP and AWS landing zones, custom Terraform providers in Go, Python automation and run ownership. 4 years of experience (Decathlon, ADEO).",
     "ogTitle": "Cloud Ops & Platform Engineer",
-    "ogTagline": "Freelance · GCP and AWS landing zones, Terraform, Python"
+    "ogTagline": "Freelance · GCP and AWS landing zones, Terraform providers, Python"
   },
   "a11y": { "skip": "Skip to content", "language": "Language" },
   "nav": { "services": "Expertise", "proof": "Results", "experience": "Experience", "contact": "Contact", "cta": "Get in touch" },
   "hero": {
-    "badge": "Freelance · Currently on mission at Decathlon",
+    "badge": "Freelance · Cloud DevOps Engineer",
     "title": "Cloud Ops and Platform Engineering, for the long run.",
-    "subtitle": "Freelance Cloud Ops engineer with four years on GCP and AWS. I operate and evolve multi-cloud landing zones with Terraform and Python, from daily run and incident response to platform tooling and automation.",
+    "subtitle": "Freelance Cloud DevOps engineer with four years on GCP and AWS. I design and evolve multi-cloud landing zones and build custom Terraform providers in Go, so your product teams can provision on their own, safely.",
     "cta": "Get in touch",
     "cv": "Download CV",
-    "availability": "Not available right now · Open to discussing future long-term missions · Remote, Paris, Lille",
+    "availability": "On mission at Decathlon since May 2026 · Open to discussing future missions · Remote, Paris, Lille",
     "photoAlt": "Portrait of Said Hammoudi"
   },
   "services": {
@@ -21,12 +21,16 @@
     "subtitle": "The scope of a typical long-term mission on a cloud platform team.",
     "items": [
       {
-        "title": "Cloud operations",
-        "text": "Day-to-day ownership of multi-cloud environments: incident handling and root-cause analysis, L3 support and on-call, and continuous improvement of the run."
+        "title": "Custom Terraform providers",
+        "text": "Custom Terraform providers in Go that bring your internal APIs and bespoke resources under infrastructure as code, tested and versioned like any other module. Built at Decathlon to industrialise network resources."
       },
       {
-        "title": "Landing zones and governance",
-        "text": "Cloud organisation, networking, IAM and guardrails on GCP and AWS, built as reusable Terraform modules that product teams can adopt on their own."
+        "title": "GCP and AWS landing zones",
+        "text": "Design, operation and evolution of landing zones: organisation and accounts, networking, IAM and guardrails, shipped as reusable Terraform modules that product teams adopt on their own."
+      },
+      {
+        "title": "Cloud operations",
+        "text": "Day-to-day ownership of multi-cloud environments: incident handling and root-cause analysis, L3 support and on-call, and continuous improvement of the run."
       },
       {
         "title": "Automation and delivery",
@@ -34,7 +38,7 @@
       },
       {
         "title": "Internal tooling and APIs",
-        "text": "Python and FastAPI provisioning APIs, serverless workloads on Cloud Run and custom Terraform providers in Go, to remove tickets and manual steps."
+        "text": "Python and FastAPI provisioning APIs, serverless workloads on Cloud Run and internal SDKs, to remove tickets and manual steps."
       },
       {
         "title": "Security and observability",
@@ -68,7 +72,7 @@
       {
         "company": "Decathlon",
         "role": "Cloud Ops Engineer (freelance)",
-        "period": "Present",
+        "period": "May 2026 – present",
         "points": [
           "Back in the Cloud Foundation team, operating the GCP and AWS landing zones used by product teams.",
           "Run, incident handling and root-cause analysis on a multi-cloud platform.",
@@ -129,7 +133,7 @@
   },
   "contact": {
     "title": "Planning a Cloud Ops or Platform mission?",
-    "text": "I am on a mission right now and not available. Tell me about your platform, the scope and the timeline, and I will let you know when I can start.",
+    "text": "A landing zone to build or take over, a Terraform provider to write, a run to make reliable: tell me about your platform, the scope and the timeline, and we will work out when to start.",
     "cta": "Get in touch"
   },
   "footer": { "rights": "All rights reserved." }
